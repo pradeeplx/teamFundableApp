@@ -4,7 +4,7 @@ body{
 
 .uiView {
 	position: absolute;
-	top: 130px;
+	top: 180px;
 }
 
 /*Header*/
@@ -137,7 +137,7 @@ header .loginButton{
 
 	 header .createFundraiserButton {
  	  top: 65px;
- 	  right: 300px;
+ 	  right: 285px;
  	  position: absolute;
  	   background-color: #445D7B;
  	   border: none;
