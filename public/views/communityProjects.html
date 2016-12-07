@@ -21,27 +21,32 @@
 <div class="postedProjects">
 		<div class="projectContainer" ng-repeat="project in projectData | filter:filterProjectIsMatched ">
 
+
 				<div class="projName">
-					<h4>{{project.name}}</h4>
+					<input ng-show="editProjectButton" ng-model="project.name" placeholder="{{project.name}}">
+					<h4 ng-show="!editProjectButton">{{project.name}}</h4>
 				</div>
 				<div class="projInfo">
 					<div class="projPic">
-							<img src={{project.image}}>
+						<input ng-show="editProjectButton" ng-model="project.image" placeholder="{{project.image}}">
+						<img ng-show="!editProjectButton" src={{project.image}}>
 					</div>
-					<p>{{project.mainDescription}}</p>
-					<p>{{project.estimatedLabor}}</p>
-					<p>{{project.estimatedCost}}</p>
-					<p>{{project.dropDate}}</p>
-					<p>{{project.createdBy}}</p>
-					<p>{{project.isMatched}}</p>
+					<input ng-show="editProjectButton" ng-model="project.mainDescription" placeholder="{{project.mainDescription}}">
+					<p ng-show="!editProjectButton">{{project.mainDescription}}</p>
+					<input ng-show="editProjectButton" ng-model="project.estimatedLabor" placeholder="{{project.estimatedLabor}}">
+					<p ng-show="!editProjectButton">{{project.estimatedLabor}}</p>
+					<input ng-show="editProjectButton" ng-model="project.estimatedCost" placeholder="{{project.estimatedCost}}">
+					<p ng-show="!editProjectButton"> {{project.estimatedCost}}</p>
+					<input ng-show="editProjectButton" ng-model="project.dropDate" placeholder="{{project.dropDate}}">
+					<p ng-show="!editProjectButton">{{project.dropDate}}</p>
 				</div>
 				<div class="projMatchContainer">
 					<button id="projMatchButton" ng-show="currentUser.hasFundraiser">Match Your Team</button>
 				</div>
 
-				<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Destroy</button>
-				<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Update Project</button>
-
+				<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Destroy Project</button>
+				<button ng-hide="editProjectButton" ng-click="editProjectButton = true">EDIT Project</button>
+	       		<button ng-show="editProjectButton" ng-click="updateProjectData(project); editProjectButton = false"> Save Changes</button>
 	</div>
 </div>
 
