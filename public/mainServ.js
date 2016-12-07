@@ -21,8 +21,8 @@ this.postNewUser = function(user) {
    this.logout = function() {
   
        return $http({
-           method: "GET",
-           url: "/logout"
+           method: "POST",
+           url: "/logout/"
        }).then(function(resp) {
            return resp;
        })
