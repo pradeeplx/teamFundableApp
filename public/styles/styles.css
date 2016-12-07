@@ -1,8 +1,12 @@
 body{
-	
+	margin: 0;
 }
 
-header{
+/*Header*/
+
+/*Andy's Styles*/
+
+/*header{
 	width: 98vw;
 	height: 100px;
 	border: 2px solid hotpink;
@@ -13,7 +17,333 @@ nav{
 	height: 30px;
 	border: 2px solid lime;
 	font-size: 22px;
+}*/
+
+/*End of Andy's Styling*/
+
+header .topHeader{
+  width: 100vw;
+  height: 80px;
+  background-color: white;
+  position: fixed;
+  top: 0px;
+  z-index: 200;
 }
+
+header .navHeader{
+  position: fixed;
+  background-color: #fff;
+  width: 100vw;
+  top: 80px;
+  height: 50px;
+  z-index: 200;
+  box-shadow: 0 4px 2px -2px #60718D;
+}
+
+.logo{
+  width: 400px;
+  height: 70px;
+  margin: 2px;
+}
+
+header .loginButton{
+  top: 20px;
+  right: 305px;
+  position: absolute;
+   background-color: orange;
+   border: none;
+   margin: 10px;
+   font-size: 12px;
+   font-family: 'Open Sans', sans-serif;
+   letter-spacing: 2px;
+   color: white;
+   border: 1px solid orange;
+   border-radius: 3px;
+   padding: 10px;
+   cursor: pointer;
+ }
+
+ header .createButton{
+   top: 20px;
+   right: 160px;
+   position: absolute;
+    background-color: orange;
+    border: none;
+    margin: 10px;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 2px;
+    color: white;
+    border: 1px solid orange;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+	header .yourAccountButton{
+	  top: 20px;
+	  right: 30px;
+	  position: absolute;
+	   background-color: orange;
+	   border: none;
+	   margin: 10px;
+	   font-size: 12px;
+	   font-family: 'Open Sans', sans-serif;
+	   letter-spacing: 2px;
+	   color: white;
+	   border: 1px solid orange;
+	   border-radius: 3px;
+	   padding: 10px;
+	   cursor: pointer;
+	 }
+
+  header .createButton:hover{
+    color: #445D7B;
+  }
+
+  header .loginButton:hover{
+    color: #445D7B;
+  }
+
+header .navButton{
+  background-color: white;
+  border: none;
+  margin: 6px;
+  margin-left: 20px;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  color: #60718D;
+  cursor: pointer;
+ }
+
+ header .navButton:hover{
+   border-bottom: 1px solid #60718D;
+ }
+
+/*Home Page*/
+.wrapper {
+  margin-top: 130px;
+  width: 100vw;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: space-between;
+  justify-content:center;
+}
+
+.paintPic{
+  width: 100vw;
+  height: 700px;
+  box-shadow: 0 4px 2px -2px #60718D;
+}
+
+#line1 {
+  z-index: 100;
+  color: white;
+  font-size: 40px;
+  right: 50px;
+  position: absolute;
+  top: 430px;
+  margin-right: 50px;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 1px 1px black;
+}
+
+#line2 {
+  z-index: 100;
+  color: white;
+  font-size: 40px;
+  right: 50px;
+  position: absolute;
+  top:480px;
+  margin-right: 50px;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 1px 1px black;
+}
+
+/*.homePicBox{
+  margin-bottom: 40px;
+}*/
+
+.afterPaintBox {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  color: #445d7b;
+  margin: 60px;
+}
+
+#whyUs{
+  font-size: 30px;
+  color: orange;
+  text-align: left;
+}
+
+.afterPaintBox span{
+  color: orange;
+}
+
+.afterPaintBox h2 {
+  margin: 50px;
+}
+
+.homePicBox button {
+  position: absolute;
+  right:100px;
+  top: 600px;
+  background-color: orange;
+  border: none;
+  font-size: 20px;
+  color: white;
+  width: 250px;
+  height: 60px;
+  border-radius: 3px;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.homePicBox button:hover{
+  color: #445D7B;
+}
+
+.threeArrowsPic {
+  width: 70vw;
+  height: 400px;
+  margin-top: 100px;
+  margin-bottom: 70px;
+}
+
+.wrapper  #togetherTitle {
+   width: 100%;
+   text-align: center;
+   border-bottom: 2px solid #d6de23;
+   line-height: 0.1em;
+   margin-bottom: 0;
+}
+
+.wrapper #togetherTitle span {
+    background:#fff;
+    padding:20px;
+    color: #445d7b;
+    border: 2px solid #d6de23;
+    border-radius: 25px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 2px;
+}
+
+.tripleBox{
+  width: 100%;
+  background-color: #F5F5F5;
+  text-align: center;
+  padding-top: 70px;
+  z-index: -1;
+}
+
+.box{
+  float: left;
+  width: 28vw;;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  /*margin-left: 73px;*/
+	padding: 2.5vw;
+}
+
+.box h2{
+  text-align: center;
+  font-size: 33px;
+  color: #445d7b;
+}
+
+.box h4{
+  text-align: center;
+  font-size: 20px;
+  color: #445d7b;
+}
+
+.box p{
+  text-align: center;
+  font-size: 18px;
+  color: #445d7b;
+}
+
+.box img{
+  width: 85px;
+  height: 85px;
+}
+
+.box button{
+  background-color: #d6de23;
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 15px;
+  cursor: pointer;
+  margin-left: 27px;
+  margin-top: 8px;
+}
+
+.box button:hover{
+  color: #445D7B;
+}
+
+.quote{
+  width: 100%;
+  background-color: #F5F5F5;
+  text-align: center;
+  padding-top: 20px;
+  z-index: -1;
+  padding-bottom: 50px;
+  font-size: 12px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  color: #445D7B;
+  box-shadow: 0 4px 2px -2px grey;
+}
+
+.businessLogos{
+  width: 100%;
+  height: auto;
+  margin: 50px;
+  text-align: center;
+}
+
+#busiLogo{
+  /*width: 200px;*/
+  height: 25px;
+  padding-right: 30px;
+}
+
+/*.bigButtonBox {
+  width: 100vw;
+  height: 180px;
+  background-color: #F5F5F5;
+  text-align: center;
+}
+
+.bigButtonBox button {
+  width: 350px;
+  height: 100px;
+  background-color: #d6de23;
+  color: white;
+  border: none;
+  font-size: 30px;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.bigButtonBox button:hover{
+  color: #445D7B;
+}*/
+
+/*End of Home*/
 
 .teams{
 	border: 2px solid green;

@@ -7,6 +7,38 @@
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   </head>
   <body ng-controller="mainCtrl">
+    <!-- React Header -->
+    <header>
+      <div class="topHeader">
+        <img class="logo" src="./../pics/teamFundableLogo2.png"/>
+        <button class="loginButton" ng-click="toggleLogin = !toggleLogin">Log In</a></button>
+        <button class="createButton"><a ui-sref="login">Create Account</a></button>
+        <button class="yourAccountButton"><a ui-sref="account">Your Account</a></button>
+        <form ng-show="toggleLogin" ng-submit="postNewUser(user)">
+          <div>
+            <input type="email" class="email" ng-model="user.email" placeholder="Email">
+            <input type="password" class="password" ng-model="user.password" placeholder="Password">
+            <input type="submit">
+            <button ng-click="logout()">Logout</button>
+          </div>
+        </form>
+      </div>
+
+      <div ng-show="currentUser">
+        <h4>{{currentUser.nameFirst}}<h4>
+      </div>
+
+      <div class="navHeader">
+        <button class="navButton"><a ui-sref="home">Home</a></button>
+        <button class="navButton"><a ui-sref="communityProjects">Community Projects</a></button>
+        <button class="navButton"><a ui-sref="communityTeams">Community Teams</a></button>
+        <button class="navButton"><a ui-sref="communityFundraisers">Community Fundraisers</a></button>
+        <button class="navButton"><a ui-sref="matchedPage">Help Fund a Project</a></button>
+      </div>
+    </header>
+
+        <!-- React Header End -->
+<!--
     <header>
       <div>
         <button ng-click="toggleLogin = !toggleLogin">LOGIN</a></button>
@@ -22,6 +54,7 @@
           <button ng-click="logout()">Logout</button>
         </div>
       </form>
+
       <div ng-show="currentUser">
         <h4>{{currentUser.email}}<h4>
       </div>
@@ -31,12 +64,12 @@
       <button><a ui-sref="communityTeams">Community Teams</a></button>
       <button><a ui-sref="communityFundraisers">Community Fundraisers</a></button>
       <button><a ui-sref="matchedPage">Coummunity Matches</a></button>
-    </nav>
+    </nav> -->
 
     <ui-view></ui-view>
 
 
-  
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
         <script src="app.js"></script>
         <script src="mainCtrl.js"></script>
