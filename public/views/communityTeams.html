@@ -5,14 +5,16 @@
 </div>
 
 <div ng-show="currentUser">
-	<form class="teamsInput" ng-show="toggleTeam" ng-submit="postTeamData(team)">
-		<input type="text" ng-model="team.teamName" placeholder="Team Name">
-		<input type="text" ng-model="team.mainDescription" placeholder="Team Description">
-		<input type="text" ng-model="team.clubAge" placeholder="Club Age">
-		<input type="text" ng-model="team.logo" placeholder="Team Logo">
-		<input type="text" ng-model="team.website" placeholder="Website Address">
-	  <input type="submit">
-	</form>
+	<div ng-show="!currentUser.hasTeams">
+		<form class="teamsInput" ng-show="toggleTeam" ng-submit="postTeamData(team)">
+			<input type="text" ng-model="team.teamName" placeholder="Team Name">
+			<input type="text" ng-model="team.mainDescription" placeholder="Team Description">
+			<input type="text" ng-model="team.clubAge" placeholder="Club Age">
+			<input type="text" ng-model="team.logo" placeholder="Team Logo">
+			<input type="text" ng-model="team.website" placeholder="Website Address">
+		  <input type="submit">
+		</form>
+	</div>
 </div>
 
 <div class="teams" ng-repeat="team in teamData">
@@ -33,7 +35,6 @@
 
 
 		<button ng-show="team.createdBy == currentUser._id" ng-click="destroyTeamData(team)">Destroy</button>
-		<button ng-show="team.createdBy == currentUser._id">Create a Fundraiser</button>
 		<div ng-show="team.createdBy == currentUser._id">
 			<button ng-hide="editTeamButton" ng-click="editTeamButton = true">EDIT TEAM</button>
 	       	<button ng-show="editTeamButton" ng-click="updateTeamData(team); editTeamButton = false"> Save Changes</button>
