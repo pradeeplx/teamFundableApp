@@ -2,6 +2,11 @@ body{
 	margin: 0;
 }
 
+.uiView {
+	position: absolute;
+	top: 130px;
+}
+
 /*Header*/
 
 /*Andy's Styles*/
@@ -21,23 +26,13 @@ nav{
 
 /*End of Andy's Styling*/
 
-header .topHeader{
+header{
   width: 100vw;
-  height: 80px;
+  height: 130px;;
   background-color: white;
   position: fixed;
-  top: 0px;
-  z-index: 200;
-}
+	box-shadow: 0 4px 2px -2px #60718D;
 
-header .navHeader{
-  position: fixed;
-  background-color: #fff;
-  width: 100vw;
-  top: 130px;
-  height: 50px;
-  z-index: 200;
-  box-shadow: 0 4px 2px -2px #60718D;
 }
 
 .logo{
@@ -78,6 +73,7 @@ header .loginButton{
     border-radius: 3px;
     padding: 10px;
     cursor: pointer;
+		text-decoration: none;
   }
 
 	header .yourAccountButton{
