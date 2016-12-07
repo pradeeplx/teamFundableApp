@@ -5,7 +5,7 @@
 </div>
 
 
-<div ng-show="currentUser">
+<div ng-show="!currentUser.hasProjects">
 	<form class="projectsInput" ng-show="toggleProject" ng-submit="postProjectData(project)">
 		<input type="text" ng-model="project.name" placeholder="Project Name">
 		<input type="text" ng-model="project.mainDescription" placeholder="Project Description">
