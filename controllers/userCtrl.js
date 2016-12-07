@@ -10,6 +10,16 @@ module.exports = {
     console.log(req + "logged out now");
     res.send();
   },
+  change: function(req, res){
+    UserModel
+    .findByIdAndUpdate(req.params.id, req.body, function(err, result){
+      if(err){
+        res.send(err);
+      }else{
+        res.send(result);
+      }
+    });
+  },
   getMe: function(req, res){
     if(!req.user){
       return res.send();

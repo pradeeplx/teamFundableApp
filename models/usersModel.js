@@ -13,7 +13,7 @@ var userSchema = new mongoose.Schema({
   companyName: {type: String},
   hasProjects: {type: Boolean},
   hasTeams: {type: Boolean},
-  hadFundraisers: {type: Boolean}
+  hasFundraisers: {type: Boolean}
 
 
 

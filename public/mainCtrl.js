@@ -51,7 +51,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
 
   //CRUD
   $scope.putCurrentUser = function(user) {
-    mainServ.updateTheUser()
+    mainServ.updateTheUser(user)
     .then(function(response){
       $scope.getCurrentUser();
     })
@@ -101,6 +101,11 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     fundraiser.createdBy = $scope.currentUser;
     fundraiser.isMatched = false;
     fundraiser.status = "active";
+
+    var userHelper = $scope.currentUser;
+    userHelper.hasFundraisers = true;
+    $scope.putCurrentUser(userHelper);
+
     mainServ.postFundraiserData(fundraiser)
     .then(function(response){
     $scope.getFundraiserData();
@@ -113,13 +118,13 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     })
   };
   $scope.destroyFundraiserData = function(id){
-      mainServ.destroyFundraiser(id)
+      mainServ.destroyFundraiserData(id)
       .then(function(response){
       $scope.getFundraiserData();
     })
   };
   $scope.updateFundraiserData= function(id){
-      mainServ.updateFundraiser(id)
+      mainServ.updateFundraiserData(id)
       .then(function(response){
       $scope.getFundraiserData();
     })
@@ -157,6 +162,10 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     project.isMatched = false;
     project.status = "active";
 
+    var userHelper = $scope.currentUser;
+    userHelper.hasProjects = true;
+    $scope.putCurrentUser(userHelper);
+
     mainServ.postProjectData(project)
     .then(function(response){
     $scope.getProjectData();
@@ -184,7 +193,10 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
 
    //teams
   $scope.postTeamData = function(team){
-    console.log(team.teamName);
+    
+    var userHelper = $scope.currentUser;
+    userHelper.hasTeams = true;
+    $scope.putCurrentUser(userHelper);
 
     team.createdBy = $scope.currentUser;
     mainServ.postTeamData(team)
