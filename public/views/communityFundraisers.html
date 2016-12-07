@@ -1,7 +1,7 @@
 communityFundraisers
-<div ng-show="currentUser.hasTeams">
+<!-- <div ng-show="currentUser.hasTeams">
 	<button ng-click="toggleFundraiser = !toggleFundraiser">Create A Fundraiser</a></button>
-</div>
+</div> -->
 
 <div ng-show="currentUser">
 	<form class="fundraisersInput" ng-show="toggleFundraiser" ng-submit="postFundraiserData(fundraiser)">
@@ -22,8 +22,16 @@ communityFundraisers
 		<h3>{{fundraiser.goal}}</h3>
 		<h5>{{fundraiser.createdBy}}</h5>
 		<h5>{{fundraiser.isMatched}}</h5>
-		<button ng-show="currentUser" ng-click="destroyFundraiserData(fundraiser)">Destroy</button>
-		<button ng-show="currentUser">MATCH</button>
+
+		<div ng-repeat="team in teamData | filter:filterTeamLogo">
+			<img src={{team.logo}}>
+			<h3>{{team.teamName}}</h3>
+		</div>
+
+
+		<button ng-show="fundraiser.createdBy == currentUser._id" ng-click="destroyFundraiserData(fundraiser)">Destroy</button>
+		<button ng-show="fundraiser.createdBy == currentUser._id" ng-click="updateFundraiserData(fundraiser)">Update</button>
+		
 
 	</div>
 </div>
