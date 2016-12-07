@@ -19,6 +19,7 @@ this.postNewUser = function(user) {
    }
 
    this.logout = function() {
+  
        return $http({
            method: "GET",
            url: "/logout"
@@ -185,7 +186,7 @@ this.postProjectData = function(project){
   })
 }
 
-this.destroyProjectData = function(match){
+this.destroyProjectData = function(project){
   // console.log(fundraiser);
   return $http({
     method: "DELETE",
@@ -201,6 +202,47 @@ this.updateProjectData = function(project){
     method: "PUT",
     url: "/projects/" + project._id,
     data: project
+  }).then(function(response){
+    console.log(response);
+    return response.data;
+  })
+}
+//teams
+this.getTeamData = function (){
+  return $http({
+    method: "GET",
+    url: "/teams"
+  }).then(function(response){
+    return response.data;
+  })
+}
+
+this.postTeamData = function(team){
+  return $http({
+    method: "POST",
+    url: "/teams",
+    data: team
+  }).then(function(response){
+      return response.data;
+  })
+}
+
+this.destroyTeamData = function(team){
+  // console.log(fundraiser);
+  return $http({
+    method: "DELETE",
+    url: "/teams/" + team._id
+  }).then(function(response){
+    // console.log(response.data);
+    return response.data;
+  })
+}
+
+this.updateTeamData = function(team){
+  return $http({
+    method: "PUT",
+    url: "/teams/" + team._id,
+    data: team
   }).then(function(response){
     console.log(response);
     return response.data;

@@ -1,4 +1,10 @@
 angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainServ, $state){
+
+  $scope.toggleLogin = false;
+  $scope.toggleLTeam = false;
+  
+
+
  
   $scope.postLoginUser = function(user){
    mainServ.postLoginUser(user)
@@ -6,12 +12,15 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       console.log(response);
       //if they are logged in kik em somewhere else kick em some where else
       $scope.getCurrentUser();
+
+
    })
   };
-  $scope.getLogoutUser = function(){
-    mainServ.getLogoutUser()
+  $scope.logout = function(){
+    $scope.toggleLogin = false;
+    mainServ.logout()
     .then(function(response){
-      $state.go("main");
+      $state.go("home");
       $scope.getCurrentUser();
     })
   };
@@ -29,7 +38,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
            mainServ.postNewUser(user)
                .then(function(response) {
                    $scope.getCurrentUser();
-                   $state.go("home");
+                   // $state.go("communityProjects");
                });
        };
 
@@ -115,7 +124,39 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
   };
   $scope.getProjectData();
 
+   //teams
+  $scope.postTeamData = function(team){
+    console.log(team.teamName);
+
+    team.createdBy = $scope.currentUser;
+    mainServ.postTeamData(team)
+    .then(function(response){
+
+    $scope.getTeamData();
+    })
+  };
+  $scope.getTeamData = function(){
+      mainServ.getTeamData()
+      .then(function(response){
+      $scope.teamData = response;
+    })
+  };
+  $scope.destroyTeamData = function(id){
+    console.log(id);
+      mainServ.destroyTeamData(id)
+      .then(function(response){
+      $scope.getTeamData();
+    })
+  };
+  $scope.updateTeamData= function(id){
+      mainServ.updateTeamData(id)
+      .then(function(response){
+      $scope.getTeamData();
+    })
+  };
+  $scope.getTeamData();
 
 $scope.test = "hello world";
+
 
 });

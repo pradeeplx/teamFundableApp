@@ -11,6 +11,7 @@ var userCtrl = require("./controllers/userCtrl.js")
 var fundraisersCtrl = require("./controllers/fundraisersCtrl.js")
 var matchesCtrl = require("./controllers/matchesCtrl.js")
 var projectsCtrl = require("./controllers/projectsCtrl.js")
+var teamsCtrl = require("./controllers/teamsCtrl.js")
 
 
 
@@ -48,6 +49,11 @@ app.get("/projects", projectsCtrl.read);
 app.post("/projects", projectsCtrl.create);
 app.put("/projects/:id", projectsCtrl.change);
 app.delete("/projects/:id", projectsCtrl.destroy);
+
+app.get("/teams", teamsCtrl.read);
+app.post("/teams", teamsCtrl.create);
+app.put("/teams/:id", teamsCtrl.change);
+app.delete("/teams/:id", teamsCtrl.destroy);
 
 
 mongoose.connect("mongodb://localhost: 27017/teamfundable");

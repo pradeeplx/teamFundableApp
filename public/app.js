@@ -5,6 +5,14 @@ angular.module("teamFundableApp",['ui.router'])
 $stateProvider.state("home", {
   url:"/",
   templateUrl: '/views/home.html'
+}).state("login", {
+  url:"/login",
+  templateUrl: '/views/login.html',
+  
+}).state("account", {
+  url:"/account",
+  templateUrl: '/views/account.html',
+  
 }).state("communityProjects", {
   url:"/communityProjects",
   templateUrl: '/views/communityProjects.html',
@@ -12,6 +20,10 @@ $stateProvider.state("home", {
 }).state("communityTeams", {
   url:"/communityTeams",
   templateUrl: '/views/communityTeams.html'
+
+}).state("communityFundraisers", {
+  url:"/communityFundraisers",
+  templateUrl: '/views/communityFundraisers.html'
 
 }).state("matchedPage", {
   url:"/matchedPage",
