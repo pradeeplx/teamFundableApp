@@ -1,4 +1,39 @@
-communityProjects page
+communityProjects
+<div ng-show="currentUser">
+	<button ng-click="toggleProject = !toggleProject">Create A Project</a></button>
+</div>
+
+<div ng-show="currentUser">
+	<form class="projectsInput" ng-show="toggleProject" ng-submit="postProjectData(project)">
+		<input type="text" ng-model="project.name" placeholder="Project Name">
+		<input type="text" ng-model="project.mainDescription" placeholder="Project Description">
+		<input type="text" ng-model="project.estimatedLabor" placeholder="Hours to Complete">
+		<input type="text" ng-model="project.estimatedCost" placeholder="Dollars to Complete">
+		<input type="date" ng-model="project.dropDate" placeholder="Funding Complete By">
+		<input type="text" ng-model="project.image" placeholder="Project Image">
+	 	<input type="submit">
+	</form>
+</div>
+
+<div class="projects" ng-repeat="project in projectData">
+	<div class="project">
+		<h1>{{project.name}}</h1>
+		<img src={{project.image}}>
+		<h3>{{project.mainDescription}}</h3>
+		<h3>{{project.estimatedLabor}}</h3>
+		<h3>{{project.estimatedCost}}</h3>
+		<h3>{{project.dropDate}}</h3>
+		<h5>{{project.createdBy}}</h5>
+		<h5>{{project.isMatched}}</h5>
+
+		<button ng-show="currentUser" ng-click="destroyProjectData(project)">Destroy</button>
+		
+
+	</div>
+</div>
+
+
+
 
 <p>list of community projects</p>
 <p>create a community projects</p>

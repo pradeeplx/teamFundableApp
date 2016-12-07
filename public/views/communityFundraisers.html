@@ -1,1 +1,36 @@
-communityFundraisers.html
+communityFundraisers
+<div ng-show="currentUser">
+	<button ng-click="toggleFundraiser = !toggleFundraiser">Create A Fundraiser</a></button>
+</div>
+
+<div ng-show="currentUser">
+	<form class="fundraisersInput" ng-show="toggleFundraiser" ng-submit="postFundraiserData(fundraiser)">
+		<input type="text" ng-model="fundraiser.name" placeholder="Fundraiser Name">
+		<input type="text" ng-model="fundraiser.mainDescription" placeholder="Fundraiser Description">
+		<input type="text" ng-model="fundraiser.goal" placeholder="Monetary Goal">
+		<input type="text" ng-model="fundraiser.image" placeholder="Image">
+	 	<input type="submit">
+	</form>
+</div>
+
+<div class="fundraiser" ng-repeat="fundraiser in fundraiserData">
+	<div class="fundraiser">
+		<h1>{{fundraiser.name}}</h1>
+		<img src={{fundraiser.image}}>
+		<h3>{{fundraiser.mainDescription}}</h3>
+		<h3>{{fundraiser.goal}}</h3>
+		<h5>{{fundraiser.createdBy}}</h5>
+		<h5>{{fundraiser.isMatched}}</h5>
+		<button ng-show="currentUser" ng-click="destroyFundraiserData(fundraiser)">Destroy</button>
+		<button ng-show="currentUser">MATCH</button>
+
+	</div>
+</div>
+
+
+<!-- //if you are a user with a team, then you get to create fundraisers or drives
+
+
+
+//else you get to look at the pretty fundreaisers
+ -->

@@ -5,11 +5,10 @@ var fundraisersSchema = new mongoose.Schema({
  name: {type: String},
  mainDescription: {type: String},
  dateCreated: {type: String},
- estimatedLabor: {type: String},
- estimatedCost: {type: String},
- dropDate: {type: Date},
+ goal: {type: String},
  image: {type: String},
- isMatched: {type: Boolean}
+ isMatched: {type: Boolean},
+ createdBy: {type: String}
 
 });
 

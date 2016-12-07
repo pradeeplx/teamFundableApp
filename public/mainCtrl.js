@@ -1,7 +1,9 @@
 angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainServ, $state){
 
   $scope.toggleLogin = false;
-  $scope.toggleLTeam = false;
+  $scope.toggleTeam = false;
+  $scope.toggleProject = false;
+  $scope.toggleFundraiser = false;
   
 
 
@@ -47,6 +49,8 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
 
 //fundraiser
   $scope.postFundraiserData = function(fundraiser){
+    fundraiser.createdBy = $scope.currentUser;
+    fundraiser.isMatched = false;
     mainServ.postFundraiserData(fundraiser)
     .then(function(response){
     $scope.getFundraiserData();
@@ -99,6 +103,9 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
   $scope.getMatchData();
     //projects
   $scope.postProjectData = function(project){
+    project.createdBy = $scope.currentUser;
+    project.isMatched = false;
+
     mainServ.postProjectData(project)
     .then(function(response){
     $scope.getProjectData();
@@ -111,13 +118,13 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     })
   };
   $scope.destroyProjectData = function(id){
-      mainServ.destroyProject(id)
+      mainServ.destroyProjectData(id)
       .then(function(response){
       $scope.getProjectData();
     })
   };
   $scope.updateProjectData= function(id){
-      mainServ.updateProject(id)
+      mainServ.updateProjectData(id)
       .then(function(response){
       $scope.getProjectData();
     })

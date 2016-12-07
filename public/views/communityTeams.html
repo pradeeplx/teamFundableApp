@@ -22,7 +22,7 @@ communityTeams
 		<h5>{{team.mainDescription}}</h5>
 		<h5>{{team.website}}</h5>
 		<h5>{{team.createdBy}}</h5>
-		<button ng-click="destroyTeamData(team)">Destroy</button>
+		<button ng-show="currentUser" ng-click="destroyTeamData(team)">Destroy</button>
 
 
 	</div>
