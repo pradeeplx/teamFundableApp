@@ -314,14 +314,13 @@ header .loginButton{
 display: flex;
 flex-wrap: wrap;
 flex-direction: row;
-align-content: space-between;
-align-items: center;
-justify-content: center;
+/*align-content: space-between;*/
+/*align-items: center;*/
+/*justify-content: center;*/
 width: 470px;
 height: 548px;
 border: 1px solid lightgrey;
 margin: 10px;
-padding: 0;
 font-family: 'Open Sans', sans-serif;
 }
 
@@ -343,27 +342,28 @@ font-family: 'Open Sans', sans-serif;
 
 .projName h4 {
   margin-top: 0;
-  padding-top: 5px;
-  /*font-family: 'Open Sans', sans-serif;*/
+  padding-top: 7px;
   letter-spacing: 2px;
+	/*margin-bottom: 0;*/
 }
 
 .projInfo {
   font-size: 18px;
   color: #445d7b;
-  padding-left: 20px;
-  padding-right: 20px;
-  /*font-family: 'Open Sans', sans-serif;*/
+	width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+
 }
 
-.projPic {
-  text-align: center;
-}
-
-.projPic img {
-  width: 300px;
+ .projectContainer img{
+  width: 410px;
   height: 200px;
-  margin-top: 20px;
+	padding-left: 30px;
+}
+
+.projMatchContainer {
+	
 }
 
 
