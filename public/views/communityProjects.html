@@ -1,8 +1,8 @@
-<div ng-show="currentUser">
+<!-- <div ng-show="currentUser">
 	<div ng-show="!currentUser.hasProjects">
 		<button ng-click="toggleProject = !toggleProject">Create Project</a></button>
 	</div>
-</div>
+</div> -->
 
 <div ng-show="currentUser">
 	<div ng-show="!currentUser.hasProjects">
@@ -43,9 +43,6 @@
 			<div class="projMatchContainer">
 				<button id="projMatchButton" ng-show="currentUser.hasFundraiser">Match Your Team</button>
 			</div>
-
-
-
 					<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Destroy Project</button>
 
 	  				<div ng-show="project.createdBy == currentUser._id">
