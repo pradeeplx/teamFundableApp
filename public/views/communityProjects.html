@@ -27,7 +27,8 @@ communityProjects
 		<h5>{{project.createdBy}}</h5>
 		<h5>{{project.isMatched}}</h5>
 
-		<button ng-show="currentUser" ng-click="destroyProjectData(project)">Destroy</button>
+		<button ng-show="currentUser" ng-click="destroyProjectData(project)">Destroy</button><button ng-show="currentUser.hasFundraisers">MATCH Your Fundraiser</button>
+		
 		
 
 	</div>

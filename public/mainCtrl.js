@@ -37,8 +37,6 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     }
   };
 
-
-
     $scope.filterMatchActive = function(item){
     if(item.isMatched){
       return false;
@@ -46,6 +44,14 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       return true;
     }
   };
+
+ $scope.filterTeamLogo = function(item){
+      if(item.createdBy == $scope.currentUser){
+      return false;
+    }else{
+      return true;
+    }
+ };
   
 
 
