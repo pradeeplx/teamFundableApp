@@ -7,7 +7,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   </head>
   <body ng-controller="mainCtrl">
-    
+
     <header>
       <div class="topHeader">
         <img class="logo" src="./../pics/teamFundableLogo2.png"/>
@@ -22,15 +22,16 @@
             <button ng-click="logout()">Logout</button>
           </div>
         </form>
-        <div ng-show="currentUser">
-          <h4>{{currentUser.nameFirst}}<h4>
-        </div>
+
         <div class="navHeader">
           <button class="navButton"><a ui-sref="home">Home</a></button>
           <button class="navButton"><a ui-sref="communityProjects">Community Projects</a></button>
           <button class="navButton"><a ui-sref="communityTeams">Community Teams</a></button>
           <button class="navButton"><a ui-sref="communityFundraisers">Community Fundraisers</a></button>
           <button class="navButton"><a ui-sref="matchedPage">Help Fund a Project</a></button>
+          <div class="loggedInName" ng-show="currentUser">
+            <p>Logged in as {{currentUser.nameFirst}}<p>
+          </div>
         </div>
       </div>
     </header>
