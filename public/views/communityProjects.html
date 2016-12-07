@@ -44,9 +44,11 @@
 					<button id="projMatchButton" ng-show="currentUser.hasFundraiser">Match Your Team</button>
 				</div>
 
-				<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Destroy Project</button>
-				<button ng-hide="editProjectButton" ng-click="editProjectButton = true">EDIT Project</button>
-	       		<button ng-show="editProjectButton" ng-click="updateProjectData(project); editProjectButton = false"> Save Changes</button>
+				<div ng-show="project.createdBy == currentUser._id">
+					<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Destroy Project</button>
+					<button ng-hide="editProjectButton" ng-click="editProjectButton = true">EDIT Project</button>
+		       		<button ng-show="editProjectButton" ng-click="updateProjectData(project); editProjectButton = false"> Save Changes</button>
+				</div>
 	</div>
 </div>
 
