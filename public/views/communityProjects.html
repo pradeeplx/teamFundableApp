@@ -4,17 +4,18 @@
 	</div>
 </div>
 
-
-<div ng-show="!currentUser.hasProjects">
-	<form class="projectsInput" ng-show="toggleProject" ng-submit="postProjectData(project)">
-		<input type="text" ng-model="project.name" placeholder="Project Name">
-		<input type="text" ng-model="project.mainDescription" placeholder="Project Description">
-		<input type="text" ng-model="project.estimatedLabor" placeholder="Hours to Complete">
-		<input type="text" ng-model="project.estimatedCost" placeholder="Dollars to Complete">
-		<input type="date" ng-model="project.dropDate" placeholder="Funding Complete By">
-		<input type="text" ng-model="project.image" placeholder="Project Image">
-	 	<input type="submit">
-	</form>
+<div ng-show="currentUser">
+	<div ng-show="!currentUser.hasProjects">
+		<form class="projectsInput" ng-show="toggleProject" ng-submit="postProjectData(project)">
+			<input type="text" ng-model="project.name" placeholder="Project Name">
+			<input type="text" ng-model="project.mainDescription" placeholder="Project Description">
+			<input type="text" ng-model="project.estimatedLabor" placeholder="Hours to Complete">
+			<input type="text" ng-model="project.estimatedCost" placeholder="Dollars to Complete">
+			<input type="date" ng-model="project.dropDate" placeholder="Funding Complete By">
+			<input type="text" ng-model="project.image" placeholder="Project Image">
+		 	<input type="submit">
+		</form>
+	</div>
 </div>
 
 <!-- <div class="projects" ng-repeat="project in projectData | filter:filterProjectIsMatched | filter:filterProjectIsActive"> -->
@@ -44,11 +45,14 @@
 					<button id="projMatchButton" ng-show="currentUser.hasFundraiser">Match Your Team</button>
 				</div>
 
-				<div ng-show="project.createdBy == currentUser._id">
+			
 					<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Destroy Project</button>
-					<button ng-hide="editProjectButton" ng-click="editProjectButton = true">EDIT Project</button>
-		       		<button ng-show="editProjectButton" ng-click="updateProjectData(project); editProjectButton = false"> Save Changes</button>
-				</div>
+
+	  				<div ng-show="project.createdBy == currentUser._id">
+						<button ng-hide="editProjectButton" ng-click="editProjectButton = true">EDIT Project</button>
+			       		<button ng-show="editProjectButton" ng-click="updateProjectData(project); editProjectButton = false"> Save Changes</button>
+			       	</div>
+			
 	</div>
 </div>
 

@@ -83,7 +83,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     $scope.toggleLogin = false;
     mainServ.logout()
     .then(function(response){
-      $scope.getCurrentUser();
+      $scope.currentUser = null;
     })
   };
   $scope.getCurrentUser = function(){
