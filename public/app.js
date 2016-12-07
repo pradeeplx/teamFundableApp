@@ -29,6 +29,18 @@ $stateProvider.state("home", {
   url:"/matchedPage",
   templateUrl: '/views/matchedPage.html'
 
+}).state("createProject", {
+  url:"/createProject",
+  templateUrl: '/views/createProject.html'
+
+}).state("createTeam", {
+  url:"/createTeam",
+  templateUrl: '/views/createTeam.html'
+
+}).state("createFundraiser", {
+  url:"/createFundraiser",
+  templateUrl: '/views/createFundraiser.html'
+
 })
     $urlRouterProvider.otherwise("/")
 
