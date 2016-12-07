@@ -60,14 +60,15 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     mainServ.updateTheUser(user)
     .then(function(response){
       $scope.getCurrentUser();
+      
     })
   };
 
  
   $scope.postLoginUser = function(user){
-   mainServ.postLoginUser(user)
+   mainServ.postNewUser(user)
     .then(function(response){
-      console.log(response);
+      
       //if they are logged in kik em somewhere else kick em some where else
       $scope.getCurrentUser();
 
@@ -95,6 +96,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
            mainServ.postNewUser(user)
                .then(function(response) {
                    $scope.getCurrentUser();
+                   $state.go("home");
                    // $state.go("communityProjects");
                });
        };

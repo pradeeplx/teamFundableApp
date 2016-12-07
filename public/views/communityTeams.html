@@ -1,6 +1,9 @@
 communityTeams
+
 <div ng-show="currentUser">
-	<button ng-click="toggleTeam = !toggleTeam">Create Team</a></button>
+	<div ng-show="!currentUser.hasTeams">
+		<button ng-click="toggleTeam = !toggleTeam">Create Team</a></button>
+	</div>
 </div>
 
 <div ng-show="currentUser">

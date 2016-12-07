@@ -14,14 +14,16 @@
         <button class="loginButton" ng-click="toggleLogin = !toggleLogin"><a>Log In</a></button>
         <a ui-sref="login"><button class="createButton">Create Account</button></a>
         <a ui-sref="account"><button class="yourAccountButton">Your Account</button></a>
-        <form ng-show="toggleLogin" ng-submit="postNewUser(user)">
+        <a><button ng-click="logout()">Log Out</button></a>
+
+        <form ng-show="toggleLogin" ng-submit="postLoginUser(user)">
           <div>
             <input type="email" class="email" ng-model="user.email" placeholder="Email">
             <input type="password" class="password" ng-model="user.password" placeholder="Password">
-            <input type="submit">
-            <button ng-click="logout()">Logout</button>
+            <input ng-click="toggleLogin = false" type="submit">
           </div>
         </form>
+
         <div ng-show="currentUser">
           <h4>{{currentUser.nameFirst}}<h4>
         </div>

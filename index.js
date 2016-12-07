@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/public'));
 
 app.post('/login', passport.authenticate('local-signup'), userCtrl.login)//endpoint for login and signup
-app.get('/logout', userCtrl.logout);
+app.post('/logout', userCtrl.logout);
 app.get('/current', userCtrl.getMe);
 app.put('/current/:id', userCtrl.change);
 
