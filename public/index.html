@@ -11,7 +11,7 @@
     <header>
       <div class="topHeader">
         <img class="logo" src="./../pics/teamFundableLogo2.png"/>
-        <button class="loginButton" ng-click="toggleLogin = !toggleLogin">Log In</a></button>
+        <button class="loginButton" ng-click="toggleLogin = !toggleLogin"><a>Log In</a></button>
         <button class="createButton"><a ui-sref="login">Create Account</a></button>
         <button class="yourAccountButton"><a ui-sref="account">Your Account</a></button>
         <form ng-show="toggleLogin" ng-submit="postNewUser(user)">
@@ -22,20 +22,21 @@
             <button ng-click="logout()">Logout</button>
           </div>
         </form>
-      </div>
-
-      <div ng-show="currentUser">
-        <h4>{{currentUser.nameFirst}}<h4>
-      </div>
-
-      <div class="navHeader">
-        <button class="navButton"><a ui-sref="home">Home</a></button>
-        <button class="navButton"><a ui-sref="communityProjects">Community Projects</a></button>
-        <button class="navButton"><a ui-sref="communityTeams">Community Teams</a></button>
-        <button class="navButton"><a ui-sref="communityFundraisers">Community Fundraisers</a></button>
-        <button class="navButton"><a ui-sref="matchedPage">Help Fund a Project</a></button>
+        <div ng-show="currentUser">
+          <h4>{{currentUser.nameFirst}}<h4>
+        </div>
+        <div class="navHeader">
+          <button class="navButton"><a ui-sref="home">Home</a></button>
+          <button class="navButton"><a ui-sref="communityProjects">Community Projects</a></button>
+          <button class="navButton"><a ui-sref="communityTeams">Community Teams</a></button>
+          <button class="navButton"><a ui-sref="communityFundraisers">Community Fundraisers</a></button>
+          <button class="navButton"><a ui-sref="matchedPage">Help Fund a Project</a></button>
+        </div>
       </div>
     </header>
+
+
+
 
         <!-- React Header End -->
 <!--
@@ -65,8 +66,10 @@
       <button><a ui-sref="communityFundraisers">Community Fundraisers</a></button>
       <button><a ui-sref="matchedPage">Coummunity Matches</a></button>
     </nav> -->
+    <div class="uiView">
+      <ui-view></ui-view>
+    </div>
 
-    <ui-view></ui-view>
 
 
 
