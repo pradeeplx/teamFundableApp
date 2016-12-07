@@ -11,7 +11,7 @@ body{
 
 header{
   width: 100vw;
-  height: 130px;;
+  height: 180px;;
   background-color: white;
   position: fixed;
 	box-shadow: 0 4px 2px -2px #60718D;
@@ -89,13 +89,81 @@ header .loginButton{
     color: #445D7B;
   }
 
+	header .createProjectButton {
+	  top: 65px;
+	  right: 150px;
+	  position: absolute;
+	   background-color: #445D7B;
+	   border: none;
+	   margin: 10px;
+	   font-size: 12px;
+	   font-family: 'Open Sans', sans-serif;
+	   letter-spacing: 2px;
+	   color: white;
+	   border-radius: 3px;
+	   padding: 10px;
+	   cursor: pointer;
+		 text-decoration: none;
+	 }
+
+	 header .createProjectButton:hover{
+	   color: orange;
+		 background-color: white;
+		 border: 1px solid orange;
+	 }
+
+	 header .createTeamButton {
+ 	  top: 65px;
+ 	  right: 30px;
+ 	  position: absolute;
+ 	   background-color: #445D7B;
+ 	   border: none;
+ 	   margin: 10px;
+ 	   font-size: 12px;
+ 	   font-family: 'Open Sans', sans-serif;
+ 	   letter-spacing: 2px;
+ 	   color: white;
+ 	   border-radius: 3px;
+ 	   padding: 10px;
+ 	   cursor: pointer;
+ 		 text-decoration: none;
+ 	 }
+
+ 	 header .createTeamButton:hover{
+ 	   color: orange;
+ 		 background-color: white;
+ 		 border: 1px solid orange;
+ 	 }
+
+	 header .createFundraiserButton {
+ 	  top: 65px;
+ 	  right: 300px;
+ 	  position: absolute;
+ 	   background-color: #445D7B;
+ 	   border: none;
+ 	   margin: 10px;
+ 	   font-size: 12px;
+ 	   font-family: 'Open Sans', sans-serif;
+ 	   letter-spacing: 2px;
+ 	   color: white;
+ 	   border-radius: 3px;
+ 	   padding: 10px;
+ 	   cursor: pointer;
+ 		 text-decoration: none;
+ 	 }
+
+ 	 header .createFundraiserButton:hover{
+ 	   color: orange;
+ 		 background-color: white;
+ 		 border: 1px solid orange;
+ 	 }
+
 	.loggedInName {
 		position: absolute;
-		top: 90px;
+		top: 130px;
 		right: 40px;
 		font-family: 'Open Sans', sans-serif;
 		color: #60718D;
-		letter-spacing: 2px;
 		font-size: 14px;
 	}
 
@@ -104,6 +172,7 @@ header .loginButton{
   border: none;
   margin: 6px;
   margin-left: 20px;
+	margin-top: 60px;
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 2px;
@@ -363,7 +432,7 @@ font-family: 'Open Sans', sans-serif;
 }
 
 .projMatchContainer {
-	
+
 }
 
 

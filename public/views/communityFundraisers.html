@@ -1,7 +1,7 @@
 communityFundraisers
-<!-- <div ng-show="currentUser.hasTeams">
-	<button ng-click="toggleFundraiser = !toggleFundraiser">Create A Fundraiser</a></button>
-</div> -->
+<div ng-show="currentUser.hasTeams">
+	<button>Create A Fundraiser</a></button>
+</div>
 
 <div ng-show="currentUser">
 	<form class="fundraisersInput" ng-show="toggleFundraiser" ng-submit="postFundraiserData(fundraiser)">
@@ -34,6 +34,7 @@ communityFundraisers
 				<button ng-hide="editFundraiserButton" ng-click="editFundraiserButton = true">EDIT Fundraiser</button>
 			    <button ng-show="editFundraiserButton" ng-click="updateFundraiserData(project); editFundraiserButton = false"> Save Changes</button>
 			</div>
+
 	</div>
 </div>
 

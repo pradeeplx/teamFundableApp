@@ -22,6 +22,25 @@
             <input ng-click="toggleLogin = false" type="submit">
           </div>
         </form>
+
+        <div class="secondRowButtons">
+          <div ng-show="currentUser">
+          	<div ng-show="!currentUser.hasProjects">
+          		<button class="createProjectButton"><a ui-sref="createProject">Create Project</a></button>
+          	</div>
+          </div>
+          <div ng-show="currentUser">
+          	<div ng-show="!currentUser.hasTeams">
+          		<button class="createTeamButton"><a ui-sref="createTeam">Create Team</a></button>
+          	</div>
+          </div>
+          <div ng-show="currentUser">
+            <div ng-show="currentUser.hasTeams">
+            	<button class="createFundraiserButton"><a ui-sref="createFundraiser">Create A Fundraiser</a></button>
+            </div>
+          </div>
+        </div>
+
         <div class="navHeader">
           <button class="navButton"><a ui-sref="home">Home</a></button>
           <button class="navButton"><a ui-sref="communityProjects">Community Projects</a></button>
