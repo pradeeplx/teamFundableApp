@@ -1,7 +1,9 @@
-<!-- communityProjects -->
 <div ng-show="currentUser">
-	<button ng-click="toggleProject = !toggleProject">Create A Project</a></button>
+	<div ng-show="!currentUser.hasProjects">
+		<button ng-click="toggleProject = !toggleProject">Create Project</a></button>
+	</div>
 </div>
+
 
 <div ng-show="currentUser">
 	<form class="projectsInput" ng-show="toggleProject" ng-submit="postProjectData(project)">
