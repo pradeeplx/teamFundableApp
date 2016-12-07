@@ -7,6 +7,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
   
   $scope.editTeamButton = false;
   $scope.editProjectButton = false;
+  $scope.editFundraiserButton = false;
 
 
   //filters for using in ng-repeats
