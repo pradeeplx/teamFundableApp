@@ -13,8 +13,7 @@
         <img class="logo" src="./../pics/teamFundableLogo2.png"/>
         <button class="loginButton" ng-click="toggleLogin = !toggleLogin"><a>Log In</a></button>
         <a ui-sref="login"><button class="createButton">Create Account</button></a>
-        <a ui-sref="account"><button class="yourAccountButton">Your Account</button></a>
-        <a><button ng-click="logout()">Log Out</button></a>
+        <a><button class="logOutButton" ng-click="logout()">Log Out</button></a>
 
         <form ng-show="toggleLogin" ng-submit="postLoginUser(user)">
           <div>
@@ -23,11 +22,6 @@
             <input ng-click="toggleLogin = false" type="submit">
           </div>
         </form>
-
-        <div ng-show="currentUser">
-          <h4>{{currentUser.nameFirst}}<h4>
-        </div>
-
         <div class="navHeader">
           <button class="navButton"><a ui-sref="home">Home</a></button>
           <button class="navButton"><a ui-sref="communityProjects">Community Projects</a></button>

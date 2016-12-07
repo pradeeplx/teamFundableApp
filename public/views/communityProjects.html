@@ -18,20 +18,29 @@
 </div>
 
 <!-- <div class="projects" ng-repeat="project in projectData | filter:filterProjectIsMatched | filter:filterProjectIsActive"> -->
-<div class="projects" ng-repeat="project in projectData | filter:filterProjectIsMatched ">
-	<div class="project">
-		<h1>{{project.name}}</h1>
-		<img src={{project.image}}>
-		<h3>{{project.mainDescription}}</h3>
-		<h3>{{project.estimatedLabor}}</h3>
-		<h3>{{project.estimatedCost}}</h3>
-		<h3>{{project.dropDate}}</h3>
-		<h5>{{project.createdBy}}</h5>
-		<h5>{{project.isMatched}}</h5>
+<div class="postedProjects">
+		<div class="projectContainer" ng-repeat="project in projectData | filter:filterProjectIsMatched ">
 
-		<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Destroy</button>
-		<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Update Project</button>
-		<button ng-show="currentUser.hasFundraiser">Match funraiser with Project</button>
+				<div class="projName">
+					<h4>{{project.name}}</h4>
+				</div>
+				<div class="projInfo">
+					<div class="projPic">
+							<img src={{project.image}}>
+					</div>
+					<p>{{project.mainDescription}}</p>
+					<p>{{project.estimatedLabor}}</p>
+					<p>{{project.estimatedCost}}</p>
+					<p>{{project.dropDate}}</p>
+					<p>{{project.createdBy}}</p>
+					<p>{{project.isMatched}}</p>
+				</div>
+				<div class="projMatchContainer">
+					<button id="projMatchButton" ng-show="currentUser.hasFundraiser">Match Your Team</button>
+				</div>
+
+				<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Destroy</button>
+				<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Update Project</button>
 
 	</div>
 </div>

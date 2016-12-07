@@ -9,23 +9,6 @@ body{
 
 /*Header*/
 
-/*Andy's Styles*/
-
-/*header{
-	width: 98vw;
-	height: 100px;
-	border: 2px solid hotpink;
-}
-
-nav{
-	width: 98vw;
-	height: 30px;
-	border: 2px solid lime;
-	font-size: 22px;
-}*/
-
-/*End of Andy's Styling*/
-
 header{
   width: 100vw;
   height: 130px;;
@@ -43,7 +26,7 @@ header{
 
 header .loginButton{
   top: 20px;
-  right: 305px;
+  right: 265px;
   position: absolute;
    background-color: orange;
    border: none;
@@ -60,7 +43,7 @@ header .loginButton{
 
  header .createButton {
    top: 20px;
-   right: 160px;
+   right: 120px;
    position: absolute;
     background-color: orange;
     border: none;
@@ -76,7 +59,7 @@ header .loginButton{
 		text-decoration: none;
   }
 
-	header .yourAccountButton {
+	header .logOutButton {
 	  top: 20px;
 	  right: 30px;
 	  position: absolute;
@@ -102,7 +85,7 @@ header .loginButton{
     color: #445D7B;
   }
 
-  header .yourAccountButton:hover{
+  header .logOutButton:hover{
     color: #445D7B;
   }
 
@@ -137,6 +120,8 @@ header .loginButton{
    border-bottom: 1px solid #60718D;
  }
 
+ /*End Header*/
+
 /*Home Page*/
 
 .paintPic{
@@ -168,10 +153,6 @@ header .loginButton{
   font-family: 'Open Sans', sans-serif;
   text-shadow: 1px 1px black;
 }
-
-/*.homePicBox{
-  margin-bottom: 40px;
-}*/
 
 .afterPaintBox {
   text-align: center;
@@ -244,10 +225,13 @@ header .loginButton{
 
 .tripleBox{
   width: 100%;
+	height: 500px;
   background-color: #F5F5F5;
   text-align: center;
-  padding-top: 70px;
+  padding-top: 60px;
+	padding-bottom: 50px;
   z-index: -1;
+	box-shadow: 0 4px 2px -2px grey;
 }
 
 .box{
@@ -299,20 +283,6 @@ header .loginButton{
   color: #445D7B;
 }
 
-.quote {
-  width: 100%;
-  background-color: #F5F5F5;
-  text-align: center;
-  padding-top: 20px;
-  z-index: -1;
-  padding-bottom: 50px;
-  font-size: 12px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  color: #445D7B;
-  box-shadow: 0 4px 2px -2px grey;
-}
-
 .businessLogos{
   width: 100%;
   height: auto;
@@ -321,36 +291,95 @@ header .loginButton{
 }
 
 #busiLogo{
-  /*width: 200px;*/
   height: 25px;
   padding-right: 30px;
 }
 
-/*.bigButtonBox {
-  width: 100vw;
-  height: 180px;
-  background-color: #F5F5F5;
+/*End of Home*/
+
+/*Community Projects*/
+
+.postedProjects {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-content: space-between;
+	justify-content: center;
+	align-items: center;
+	height: max-content;
+	width: 100vw;
+}
+
+.projectContainer {
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+align-content: space-between;
+align-items: center;
+justify-content: center;
+width: 470px;
+height: 548px;
+border: 1px solid lightgrey;
+margin: 10px;
+padding: 0;
+font-family: 'Open Sans', sans-serif;
+}
+
+/*.project {
+  width: 470px;
+  height: 548px;
+  border: 1px solid lightgrey;
+  margin: 10px;
+}*/
+
+.projName {
+  background-color: #445d7b;
+  width: 100%;
+  height: 50px;
+  color: white;
+  font-size: 30px;
   text-align: center;
 }
 
-.bigButtonBox button {
-  width: 350px;
-  height: 100px;
-  background-color: #d6de23;
-  color: white;
-  border: none;
-  font-size: 30px;
-  border-radius: 4px;
-  font-family: 'Open Sans', sans-serif;
+.projName h4 {
+  margin-top: 0;
+  padding-top: 5px;
+  /*font-family: 'Open Sans', sans-serif;*/
   letter-spacing: 2px;
-  cursor: pointer;
 }
 
-.bigButtonBox button:hover{
-  color: #445D7B;
-}*/
+.projInfo {
+  font-size: 18px;
+  color: #445d7b;
+  padding-left: 20px;
+  padding-right: 20px;
+  /*font-family: 'Open Sans', sans-serif;*/
+}
 
-/*End of Home*/
+.projPic {
+  text-align: center;
+}
+
+.projPic img {
+  width: 300px;
+  height: 200px;
+  margin-top: 20px;
+}
+
+
+#projMatchButton {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 0;
+  color: #445d7b;
+  border: none;
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-size: 20px;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+/*End Community Projects*/
 
 .teams{
 	border: 2px solid green;
