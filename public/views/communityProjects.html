@@ -1,4 +1,4 @@
-communityProjects
+<!-- communityProjects -->
 <div ng-show="currentUser">
 	<button ng-click="toggleProject = !toggleProject">Create A Project</a></button>
 </div>
@@ -27,11 +27,9 @@ communityProjects
 		<h5>{{project.createdBy}}</h5>
 		<h5>{{project.isMatched}}</h5>
 
-		
 		<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Destroy</button>
 		<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Update Project</button>
 		<button ng-show="currentUser.hasFundraiser">Match funraiser with Project</button>
-		
 
 	</div>
 </div>
@@ -42,4 +40,3 @@ communityProjects
 <p>list of community projects</p>
 <p>create a community projects</p>
 <p>create a community project match, agree to work</p>
-
