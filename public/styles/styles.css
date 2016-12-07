@@ -32,6 +32,7 @@ header{
   background-color: white;
   position: fixed;
 	box-shadow: 0 4px 2px -2px #60718D;
+	z-index: 300;
 }
 
 .logo{
@@ -57,7 +58,7 @@ header .loginButton{
    cursor: pointer;
  }
 
- header .createButton{
+ header .createButton {
    top: 20px;
    right: 160px;
    position: absolute;
@@ -71,11 +72,11 @@ header .loginButton{
     border: 1px solid orange;
     border-radius: 3px;
     padding: 10px;
-    cursor: pointer;
+		cursor: pointer;
 		text-decoration: none;
   }
 
-	header .yourAccountButton{
+	header .yourAccountButton {
 	  top: 20px;
 	  right: 30px;
 	  position: absolute;
@@ -90,17 +91,22 @@ header .loginButton{
 	   border-radius: 3px;
 	   padding: 10px;
 	   cursor: pointer;
+		 text-decoration: none;
+	 }
+
+	 header .loginButton:hover{
+	   color: #445D7B;
 	 }
 
   header .createButton:hover{
     color: #445D7B;
   }
 
-  header .loginButton:hover{
+  header .yourAccountButton:hover{
     color: #445D7B;
   }
 
-header .navButton{
+	header .navButton {
   background-color: white;
   border: none;
   margin: 6px;
@@ -108,8 +114,13 @@ header .navButton{
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 2px;
-  color: #60718D;
+
   cursor: pointer;
+ }
+
+ header .navButton a {
+	 text-decoration: none;
+	 color: #60718D;
  }
 
  header .navButton:hover{
@@ -117,17 +128,6 @@ header .navButton{
  }
 
 /*Home Page*/
-.wrapper {
-  margin-top: 220px;
-  width: 100vw;
-  height: max-content;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  align-content: space-between;
-  justify-content:center;
-}
 
 .paintPic{
   width: 100vw;
@@ -212,7 +212,7 @@ header .navButton{
   margin-bottom: 70px;
 }
 
-.wrapper  #togetherTitle {
+  #togetherTitle {
    width: 100%;
    text-align: center;
    border-bottom: 2px solid #d6de23;
@@ -220,7 +220,7 @@ header .navButton{
    margin-bottom: 0;
 }
 
-.wrapper #togetherTitle span {
+ #togetherTitle span {
     background:#fff;
     padding:20px;
     color: #445d7b;

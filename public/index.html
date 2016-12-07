@@ -7,13 +7,13 @@
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   </head>
   <body ng-controller="mainCtrl">
-    <!-- React Header -->
+    
     <header>
       <div class="topHeader">
         <img class="logo" src="./../pics/teamFundableLogo2.png"/>
         <button class="loginButton" ng-click="toggleLogin = !toggleLogin"><a>Log In</a></button>
-        <button class="createButton"><a ui-sref="login">Create Account</a></button>
-        <button class="yourAccountButton"><a ui-sref="account">Your Account</a></button>
+        <a ui-sref="login"><button class="createButton">Create Account</button></a>
+        <a ui-sref="account"><button class="yourAccountButton">Your Account</button></a>
         <form ng-show="toggleLogin" ng-submit="postNewUser(user)">
           <div>
             <input type="email" class="email" ng-model="user.email" placeholder="Email">
@@ -35,37 +35,6 @@
       </div>
     </header>
 
-
-
-
-        <!-- React Header End -->
-<!--
-    <header>
-      <div>
-        <button ng-click="toggleLogin = !toggleLogin">LOGIN</a></button>
-        <button><a ui-sref="login">Signup</a></button>
-        <button><a ui-sref="account">Your Account</a></button>
-      </div>
-
-      <form ng-show="toggleLogin" ng-submit="postNewUser(user)">
-        <div>
-          <input type="email" class="email" ng-model="user.email" placeholder="Email">
-          <input type="password" class="password" ng-model="user.password" placeholder="Password">
-          <input type="submit">
-          <button ng-click="logout()">Logout</button>
-        </div>
-      </form>
-
-      <div ng-show="currentUser">
-        <h4>{{currentUser.email}}<h4>
-      </div>
-    </header>
-    <nav>
-      <button><a ui-sref="communityProjects">Community Projects</a></button>
-      <button><a ui-sref="communityTeams">Community Teams</a></button>
-      <button><a ui-sref="communityFundraisers">Community Fundraisers</a></button>
-      <button><a ui-sref="matchedPage">Coummunity Matches</a></button>
-    </nav> -->
     <div class="uiView">
       <ui-view></ui-view>
     </div>
