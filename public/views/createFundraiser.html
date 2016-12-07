@@ -1,1 +1,9 @@
 createFundraiser.html
+
+	<form class="fundraisersInput" ng-show="toggleFundraiser" ng-submit="postFundraiserData(fundraiser)">
+		<input type="text" ng-model="fundraiser.name" placeholder="Fundraiser Name">
+		<input type="text" ng-model="fundraiser.mainDescription" placeholder="Fundraiser Description">
+		<input type="text" ng-model="fundraiser.goal" placeholder="Monetary Goal">
+		<input type="text" ng-model="fundraiser.image" placeholder="Image">
+	 	<input type="submit">
+	</form>
