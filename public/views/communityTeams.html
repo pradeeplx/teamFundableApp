@@ -23,6 +23,8 @@ communityTeams
 		<h5>{{team.website}}</h5>
 		<h5>{{team.createdBy}}</h5>
 		<button ng-show="currentUser" ng-click="destroyTeamData(team)">Destroy</button>
+		<button ng-show="currentUser.hasTeams">Create a Fundraiser</button>
+
 
 
 	</div>
