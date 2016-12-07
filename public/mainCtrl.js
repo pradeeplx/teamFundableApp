@@ -4,8 +4,58 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
   $scope.toggleTeam = false;
   $scope.toggleProject = false;
   $scope.toggleFundraiser = false;
+
+  //filters for using in ng-repeats
+
+  $scope.filterProjectIsMatched = function(item){
+    if(item.isMatched){
+      return false;
+    }else{
+      return true;
+    }
+  };
+    $scope.filterProjectIsActive= function(item){
+    if(item.status == "active"){
+      return true;
+    }else{
+      return false;
+    }
+  };
+  
+  $scope.filterFundraiserIsActive= function(item){
+    if(item.status == "active"){
+      return true;
+    }else{
+      return false;
+    }
+  };
+  $scope.filterFundraiserIsMatched = function(item){
+    if(item.isMatched){
+      return false;
+    }else{
+      return true;
+    }
+  };
+
+
+
+    $scope.filterMatchActive = function(item){
+    if(item.isMatched){
+      return false;
+    }else{
+      return true;
+    }
+  };
   
 
+
+  //CRUD
+  $scope.putCurrentUser = function(user) {
+    mainServ.updateTheUser()
+    .then(function(response){
+      $scope.getCurrentUser();
+    })
+  };
 
  
   $scope.postLoginUser = function(user){
@@ -22,7 +72,6 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     $scope.toggleLogin = false;
     mainServ.logout()
     .then(function(response){
-      $state.go("home");
       $scope.getCurrentUser();
     })
   };
@@ -51,6 +100,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
   $scope.postFundraiserData = function(fundraiser){
     fundraiser.createdBy = $scope.currentUser;
     fundraiser.isMatched = false;
+    fundraiser.status = "active";
     mainServ.postFundraiserData(fundraiser)
     .then(function(response){
     $scope.getFundraiserData();
@@ -105,6 +155,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
   $scope.postProjectData = function(project){
     project.createdBy = $scope.currentUser;
     project.isMatched = false;
+    project.status = "active";
 
     mainServ.postProjectData(project)
     .then(function(response){

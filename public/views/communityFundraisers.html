@@ -1,5 +1,5 @@
 communityFundraisers
-<div ng-show="currentUser">
+<div ng-show="currentUser.hasTeams">
 	<button ng-click="toggleFundraiser = !toggleFundraiser">Create A Fundraiser</a></button>
 </div>
 
@@ -13,7 +13,8 @@ communityFundraisers
 	</form>
 </div>
 
-<div class="fundraiser" ng-repeat="fundraiser in fundraiserData">
+<!-- <div class="fundraiser" ng-repeat="fundraiser in fundraiserData | filter:filterFundraiserIsMatched | filter:filterFundraiserIsActive"> -->
+<div class="fundraiser" ng-repeat="fundraiser in fundraiserData | filter:filterFundraiserIsMatched">
 	<div class="fundraiser">
 		<h1>{{fundraiser.name}}</h1>
 		<img src={{fundraiser.image}}>

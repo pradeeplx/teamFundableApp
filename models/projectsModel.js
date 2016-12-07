@@ -7,6 +7,7 @@ var projectsSchema = new mongoose.Schema({
  estimatedCost: {type: String},
  dropDate: {type: Date},
  image: {type: String},
- isMatched: {type: Boolean}
+ isMatched: {type: Boolean},
+ status: {type: String}
 });
 module.exports = mongoose.model("Projects", projectsSchema);

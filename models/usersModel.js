@@ -10,7 +10,10 @@ var userSchema = new mongoose.Schema({
   company: {type: String},
   type: {type: String},
   teamName: {type: String},
-  companyName: {type: String}
+  companyName: {type: String},
+  hasProjects: {type: Boolean},
+  hasTeams: {type: Boolean},
+  hadFundraisers: {type: Boolean}
 
 
 

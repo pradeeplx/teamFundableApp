@@ -8,7 +8,8 @@ var fundraisersSchema = new mongoose.Schema({
  goal: {type: String},
  image: {type: String},
  isMatched: {type: Boolean},
- createdBy: {type: String}
+ createdBy: {type: String},
+ status: {type: String}
 
 });
 

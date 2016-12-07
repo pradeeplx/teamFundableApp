@@ -15,7 +15,8 @@ communityProjects
 	</form>
 </div>
 
-<div class="projects" ng-repeat="project in projectData">
+<!-- <div class="projects" ng-repeat="project in projectData | filter:filterProjectIsMatched | filter:filterProjectIsActive"> -->
+<div class="projects" ng-repeat="project in projectData | filter:filterProjectIsMatched ">
 	<div class="project">
 		<h1>{{project.name}}</h1>
 		<img src={{project.image}}>
