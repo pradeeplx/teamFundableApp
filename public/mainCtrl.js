@@ -9,6 +9,50 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
   $scope.editProjectButton = false;
   $scope.editFundraiserButton = false;
 
+//what happens when you push the Match button on the fundraiser page
+
+  $scope.buttonMatch = function(project){
+
+  var fun = {};
+  var funData = $scope.fundraiserData;
+    for(var i = 0; i < funData.length; i++){
+      if(funData[i].createdBy == $scope.currentUser._id){
+        var fun = funData[i];
+      }
+    };
+  var team = {};
+  var tData = $scope.teamData;
+   for(var j = 0; j < tData.length; j++){
+    if(tData[j].createdBy == $scope.currentUser._id){
+      var team = tData[j];
+    }
+   };
+
+
+    console.log(project);
+    var match = {
+      "status": "active",
+      "projectId": project._id,
+      "projectName": project.name,
+      "projectMainDescription": project.mainDescription,
+      "projectDropDate": project.dropDate,
+      "projectImage": project.image,
+      "projectCreatedBy": project.createdBy,
+      "fundraiserId": fun._id,
+      "fundraiserMainDescription": fun.mainDescription,
+      "fundraiserGoal": fun.goal,
+      "fundraiserImage": fun.image,
+      "teamName": team.teamName,
+      "teamMainDescription": team.MainDescription,
+      "teamClubAge": team.clubAge,
+      "teamLogo": team.logo
+
+    };
+    console.log(match);
+  };
+
+
+
 
   //filters for using in ng-repeats
 

@@ -29,7 +29,9 @@ this.postNewUser = function(user) {
    };
 
    this.updateTheUser = function(currentUser) {
+            console.log("got here");
        return $http({
+
            method: "PUT",
            url: "/current/" + currentUser._id,
            data: currentUser
