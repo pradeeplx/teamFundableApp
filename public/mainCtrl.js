@@ -55,6 +55,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       "projectImage": project.image,
       "projectCreatedBy": project.createdBy,
       "fundraiserId": fun._id,
+      "fundraiserName": fun.name,
       "fundraiserMainDescription": fun.mainDescription,
       "fundraiserGoal": fun.goal,
       "fundraiserImage": fun.image,
