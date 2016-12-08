@@ -1,3 +1,26 @@
 matches
-<p>a list of all the fundable matches</p>
-<p>fund a match</p>
+
+<div class="mathces" ng-repeat="match in matchData">
+	<div class="match">	
+		<h1>{{match.status}}</h1>
+		<h1>{{match.projectName}}</h1>
+		<h1>{{match.projectMainDescription}}</h1>
+		<h1>{{match.projectDropDate}}</h1>
+		<img src={{match.projectImage}}/>
+		<h1>{{match.fundraiserName}}</h1>
+		<h1>{{match.fundraiserMainDescription}}</h1>
+		<h1>{{match.fundraiserGoal}}</h1>
+		<img src={{match.fundraiserImage}}/>
+		<h1>{{match.fundraiserImage}}</h1>
+		<h1>{{match.teamName}}</h1>
+		<h1>{{match.teamMainDescription}}</h1>
+		<h1>{{match.teamClubAge}}</h1>
+		<img src={{match.teamLogo}}/>
+
+		<button>DONATE NOW</button>
+	 </div>
+	
+</div>
+
+
+	
