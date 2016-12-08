@@ -1,6 +1,6 @@
 <!-- <div class="fundraiser" ng-repeat="fundraiser in fundraiserData | filter:filterFundraiserIsMatched | filter:filterFundraiserIsActive"> -->
 <div class="postedProjects">
-		<div class="projectContainer" ng-repeat="fundraiser in fundraiserData">
+		<div class="projectContainer" ng-repeat="fundraiser in fundraiserData | filter:filterFundraiserIsMatched">
 
 			<div class="projName">
 				<!-- <input ng-show="editFundraiserButton" ng-model="fundraiser.name" placeholder="{{fundraiser.name}}"> -->
