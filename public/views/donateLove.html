@@ -1,0 +1,59 @@
+<div class="postDonationContainer">
+	<form class="DonationsInput" ng-submit="postDonation(donation)">
+		<h2><u>Make a donation:</u></h2>
+		
+			<input type="text" ng-model="donation.amount">
+			<p>Amount:</p>
+			<input type="text" ng-model="donation.cardNumber">
+			<p>Card Number:</p>
+			<input type="text" ng-model="donation.cardExpiration">
+			<p>Card Expiration:</p>
+			<input type="text" ng-model="donation.securityCode">
+			<p>Security Code:</p>
+			<input type="text" ng-model="donation.cardholderName">
+			<p>cardholderName:</p>
+			<input type="text" ng-model="donation.zipCode">
+			<p>Zip Code:</p>
+
+			<button ng-click="buttonDonateNow()">DONATE NOW</button>
+
+
+
+			<div class="matchProjectInfo">
+				<h2><u>Donation Information:</u></h2>
+
+				<h3><u>Project:</u></h3>
+					<h6>{{loveConnection.projectName}}</h6>
+					<h6>{{loveConnection.projectMainDescription}}</h6>
+				
+
+
+				<h3><u>Fundraiser:</u></h3>
+
+				<h3><u>Team:</u></h3>
+
+
+
+				{{loveConnection}}
+			</div>
+
+		 
+	</form>
+</div>
+<!-- 
+	status: {type: String},
+	projectId: {type: String},
+	projectName: {type: String},
+	projectMainDescription: {type: String},
+	projectDropDate: {type: Date},
+	projectImage: {type: String},
+	projectCreatedBy: {type: String},
+	fundraiserId: {type: String},
+	fundraiserName: {type: String},
+	fundraiserMainDescription: {type: String},
+	fundraiserGoal: {type: String},
+	fundraiserImage: {type: String},
+	teamName: {type: String},
+	teamMainDescription: {type: String},
+	teamClubAge: {type: String},
+	teamLogo: {type: String} -->
