@@ -48,7 +48,13 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       "teamLogo": team.logo
 
     };
-    console.log(match);
+    
+    $scope.postMatchData(match);
+
+
+
+
+
   };
 
 
@@ -192,6 +198,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     mainServ.postMatchData(match)
     .then(function(response){
     $scope.getMatchData();
+    $state.go('matchedPage');
     })
   };
   $scope.getMatchData = function(){
