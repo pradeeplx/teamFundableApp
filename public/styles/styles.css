@@ -455,6 +455,10 @@ header .loginButton{
   color: #445D7B;
 }
 
+.projectsInput h3{
+	font-size: 20px;
+}
+
 /*end of post a project form  page*/
 
 /*Community Projects*/
@@ -565,12 +569,13 @@ font-family: 'Open Sans', sans-serif;
 }
 
 .matches {
-	display: flex;
+	/*display: flex;
 	flex-wrap: wrap;
-	flex-direction: row;
+	flex-direction: row;*/
 	/*align-content: space-between;*/
 	/*align-items: center;*/
 	/*justify-content: center;*/
+	display: block;
 	width: 90%;
 	height: 550px;
 	border: 1px solid lightgrey;
@@ -587,22 +592,36 @@ font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
 
-.teamBox {
-	width: 46%;
-	height: 490px;
-	border: 1px solid lightgrey;
+.matchName h4 {
+  margin-top: 0;
+  padding-top: 7px;
+  letter-spacing: 2px;
 }
 
-.teamPic img {
+.matchBox {
+	float: left;
+	width: 49%;
+	margin-left: 0.5%;
+	height: 459px;
+	/*border: 1px solid lightgrey;*/
+}
+
+.matchPic {
 	width: 90%;
 	height: 200px;
+	margin-left: 25%;
+	padding-top: 5%;
 }
 
 .teamInfo{
-	font-size: 13px;
-	color: lightgrey;
+	font-size: 16px;
+	color: grey;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 60px;
+	padding-top: 10px;
 }
-
+/*
 .projectBox {
 	width: 46%;
 	height: 490px;
@@ -612,11 +631,22 @@ font-family: 'Open Sans', sans-serif;
 .projectPic img {
 	width: 90%;
 	height: 200px;
-}
-
+}*/
+/*
 .projectInfo{
 	font-size: 13px;
 	color: lightgrey;
+}*/
+
+#matchButton{
+	width: 100%;
+	height:40px;
+	text-align: center;
+	color: white;
+	background-color: #d6de23;
+	border: none;
+	font-size: 20px;
+	letter-spacing: 2px;
 }
 
 /*this is the footer styling*/
