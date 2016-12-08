@@ -12,12 +12,13 @@ var matchesSchema = new mongoose.Schema({
 	fundraiserId: {type: String},
 	fundraiserName: {type: String},
 	fundraiserMainDescription: {type: String},
-	fundraiserGoal: {type: String},
+	fundraiserGoal: {type: Number},
 	fundraiserImage: {type: String},
 	teamName: {type: String},
 	teamMainDescription: {type: String},
 	teamClubAge: {type: String},
-	teamLogo: {type: String}
+	teamLogo: {type: String},
+	amountFunded: {type: Number}
 
 });
 

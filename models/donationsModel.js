@@ -5,7 +5,7 @@ var donationsSchema = new mongoose.Schema({
 	matchId: {type: String},
 	userId: {type: String},
 	amount: {type: Number},
-	cardNumber: {type: Number},
+	cardNumber: {type: String},
 	cardExpiration: {type: Date},
 	secuirtyCode: {type: String},
 	cardholderName: {type: String},
