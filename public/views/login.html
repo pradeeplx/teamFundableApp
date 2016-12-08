@@ -1,26 +1,15 @@
-
-   <form ng-submit="postNewUser(newUser)">
-       <div>
-           <h4> Create New Account Below:</h4>
-           <p>
-               <label>First Name:</label>
-               <input type="text" ng-model="newUser.nameFirst" placeholder="First Name">
-           </p>
-           <p>
-               <label>Last Name:</label>
-               <input type="text" ng-model="newUser.nameLast" placeholder="Last Name">
-           </p>
-           <p>
-               <label>Email:</label>
-               <input type="text" ng-model="newUser.email" placeholder="Email">
-           </p>
-           <p>
-               <label>Password:</label>
-               <input type="password" ng-model="newUser.password" placeholder="Password">
-           </p>
-
-           <p><small> If you already have an account please login above.</small></p>
-           <input type="submit">
-       </div>
+<div class="postProjContainer">
+   <form class="projectsInput" ng-submit="postNewUser(newUser)">
+      <h3><u>Create New Account Below:</u></h3>
+      <p>First Name: </p>
+      <input type="text" ng-model="newUser.nameFirst">
+      <p>Last Name: </p>
+      <input type="text" ng-model="newUser.nameLast">
+      <p>Email: </p>
+      <input type="text" ng-model="newUser.email">
+      <p>Password: </p>
+      <input type="password" ng-model="newUser.password">
+      <small> If you already have an account please login above.</small>
+      <input id="postProjInput" type="submit">
    </form>
 </div>

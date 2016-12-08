@@ -4,9 +4,9 @@
 			<div class="matchName">
 				<h4>Matched!</h4>
 			</div>
-			<div class="teamBox">
-				<div class="teamPic">
-					<img src={{match.teamLogo}}/>
+			<div class="matchBox">
+				<div class="matchPic">
+					<img src={{match.teamLogo}}>
 				</div>
 				<div class="teamInfo">
 					<p>Team: {{match.teamName}}</p>
@@ -15,17 +15,17 @@
 					<p>{{match.fundraiserGoal}}</p>
 				</div>
 			</div>
-			<div class="projectBox">
-				<div class="projectPic">
-					<img src={{match.projectImage}}/>
+			<div class="matchBox">
+				<div class="matchPic">
+					<img src={{match.projectImage}}>
 				</div>
-				<div class="projectInfo">
+				<div class="teamInfo">
 					<p>Project: {{match.projectName}}</p>
 					<p>{{match.projectMainDescription}}</p>
 					<p>Drop Date: {{match.projectDropDate}}</p>
 				</div>
 			</div>
 		</div>
-		<button ng-click="toDonate(match)">DONATE NOW</button>
+		<button id="matchButton" ng-click="toDonate(match)">Donate Now</button>
 	</div>
 </div>
