@@ -682,3 +682,8 @@ font-family: 'Open Sans', sans-serif;
 
 
 /*this is the end of the footer styling*/
+
+#thing {
+  height: 200px;
+  width: 200px;
+}

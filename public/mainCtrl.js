@@ -1,5 +1,10 @@
 angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainServ, $state){
 
+
+
+
+
+
   $scope.toggleLogin = false;
   $scope.toggleTeam = false;
   $scope.toggleProject = false;
@@ -237,11 +242,14 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       mainServ.getMatchData()
       .then(function(response){
       $scope.matchData = response;
+      $scope.dataArray = [];
       for (var i = 0; i < $scope.matchData.length; i++) {
           $scope.matchData[i].projectDropDate = moment($scope.matchData[i].projectDropDate).format("MMM. DD, YYYY");
+
       }
     })
   };
+      
   $scope.destroyMatchData = function(id){
       mainServ.destroyMatchData(id)
       .then(function(response){
