@@ -4,7 +4,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
   $scope.toggleTeam = false;
   $scope.toggleProject = false;
   $scope.toggleFundraiser = false;
-  
+
   $scope.editTeamButton = false;
   $scope.editProjectButton = false;
   $scope.editFundraiserButton = false;
@@ -23,7 +23,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
 
 
     $state.go('donateLoveThanks');
-    
+
 
   }
 
@@ -85,7 +85,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       return false;
     }
   };
-  
+
   $scope.filterFundraiserIsActive= function(item){
     if(item.status == "active"){
       return true;
@@ -116,7 +116,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       return true;
     }
  };
-  
+
 
 
   //CRUD
@@ -124,15 +124,15 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     mainServ.updateTheUser(user)
     .then(function(response){
       $scope.getCurrentUser();
-      
+
     })
   };
 
- 
+
   $scope.postLoginUser = function(user){
    mainServ.postNewUser(user)
     .then(function(response){
-      
+
       //if they are logged in kik em somewhere else kick em some where else
       $scope.getCurrentUser();
 
@@ -214,6 +214,9 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       mainServ.getMatchData()
       .then(function(response){
       $scope.matchData = response;
+      for (var i = 0; i < $scope.matchData.length; i++) {
+          $scope.matchData[i].projectDropDate = moment($scope.matchData[i].projectDropDate).format("MMM. DD, YYYY");
+      }
     })
   };
   $scope.destroyMatchData = function(id){
@@ -248,6 +251,9 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       mainServ.getProjectData()
       .then(function(response){
       $scope.projectData = response;
+      for (var i = 0; i < $scope.projectData.length; i++) {
+          $scope.projectData[i].dropDate = moment($scope.projectData[i].dropDate).format("MMM. DD, YYYY");
+      }
     })
   };
   $scope.destroyProjectData = function(id){
@@ -266,7 +272,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
 
    //teams
   $scope.postTeamData = function(team){
-    
+
     var userHelper = $scope.currentUser;
     userHelper.hasTeams = true;
     $scope.putCurrentUser(userHelper);
