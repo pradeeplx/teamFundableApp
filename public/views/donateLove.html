@@ -25,18 +25,22 @@
 		<!-- </div> -->
 		<hr></hr>
 		<p>Amount:</p>
-			<input type="text" ng-model="donation.amount">
+			<input type="number" ng-model="donation.amount">
 			<p>Card Number:</p>
 			<input type="text" ng-model="donation.cardNumber">
 			<p>Card Expiration:</p>
-			<input type="text" ng-model="donation.cardExpiration">
+			<input type="date" ng-model="donation.cardExpiration">
 			<p>Security Code:</p>
 			<input type="text" ng-model="donation.securityCode">
 			<p>CardholderName:</p>
 			<input type="text" ng-model="donation.cardholderName">
 			<p>Zip Code:</p>
 			<input type="text" ng-model="donation.zipCode">
-			<button id="postProjInput" ng-click="buttonDonateNow(donation)">Donate Now</button>
+			
+
+
+
+			<button id="postProjInput" ng-click="postDonationData(donation)">Donate Now</button>
 	</form>
 </div>
 </div>

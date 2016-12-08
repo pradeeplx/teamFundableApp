@@ -1,5 +1,10 @@
 angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainServ, $state){
 
+
+
+
+
+
   $scope.toggleLogin = false;
   $scope.toggleTeam = false;
   $scope.toggleProject = false;
@@ -18,14 +23,14 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
 
 //what happens when donate now is pressed
   $scope.buttonDonateNow = function(donation){
+    console.log(donation);
     $scope.postDonationData(donation);
+    //get the amount funded
 
-
+    //put to the match to increase the amountfunded
 
     $state.go('donateLoveThanks');
-
-
-  }
+  };
 
 //what happens when you push the Match button on the fundraiser page
 
@@ -45,7 +50,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       var team = tData[j];
     }
    };
-
+   var match = {};
     var match = {
       "status": "active",
       "projectId": project._id,
@@ -62,7 +67,8 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       "teamName": team.teamName,
       "teamMainDescription": team.MainDescription,
       "teamClubAge": team.clubAge,
-      "teamLogo": team.logo
+      "teamLogo": team.logo,
+      "amountFunded": 0
     };
     $scope.postMatchData(match);
 
@@ -236,19 +242,22 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       mainServ.getMatchData()
       .then(function(response){
       $scope.matchData = response;
+      $scope.dataArray = [];
       for (var i = 0; i < $scope.matchData.length; i++) {
           $scope.matchData[i].projectDropDate = moment($scope.matchData[i].projectDropDate).format("MMM. DD, YYYY");
+
       }
     })
   };
+      
   $scope.destroyMatchData = function(id){
-      mainServ.destroyMatch(id)
+      mainServ.destroyMatchData(id)
       .then(function(response){
       $scope.getMatchData();
     })
   };
   $scope.updateMatchData= function(id){
-      mainServ.updateMatch(id)
+      mainServ.updateMatchData(id)
       .then(function(response){
       $scope.getMatchData();
     })
@@ -330,11 +339,43 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
   $scope.getTeamData();
 
   //donations
+$scope.masterFund = 0;
+
+
   $scope.postDonationData = function(donation){
-    mainServ.postTeamData(donation)
+    
+    mainServ.postDonationData(donation)
     .then(function(response){
     $scope.getDonationData();
+    $state.go('donateLoveThanks');
+
+    console.log( $scope.loveConnection._id);
+    //variable for the working match
+    var workingMatch = {};
+
+    //get the matchid
+    var mId = $scope.loveConnection._id;
+    console.log(mId);
+
+    var m = $scope.matchData;
+    for(var k = 0; k < m.length; k++){
+      if(m[k]._id == mId){
+        workingMatch = m[k];
+        $scope.masterFund = workingMatch.amountFunded;
+      };
+    };
+    console.log($scope.masterFund);
+    var newAmount =  ($scope.masterFund + donation.amount);
+
+  // 
+    var upMatch = {};
+    upMatch = {
+      "_id": mId,
+      "amountFunded": newAmount
+    };
+    $scope.updateMatchData(upMatch);
     })
+
   };
   $scope.getDonationData = function(){
       mainServ.getDonationData()
@@ -355,8 +396,5 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     })
   };
   $scope.getDonationData();
-
-
-
 
 });

@@ -18,7 +18,11 @@
 					<p>Team: {{match.teamName}}</p>
 					<p>Fundraiser: {{match.fundraiserName}}</p>
 					<p>{{match.fundraiserMainDescription}}</p>
-					<p>Fundraiser Goal: {{match.fundraiserGoal}}</p>
+					<p>${{match.amountFunded}}/{{match.fundraiserGoal}}</p>
+					<svg height="15" width="400">
+					<rect x="0" height="15" ng-attr-width="{{(match.amountFunded/match.fundraiserGoal)*400}}" fill="green"/><rect ng-attr-x="{{(match.amountFunded/match.fundraiserGoal)*400}}" height="15" width="{{(match.fundraiserGoal - (match.amountFunded/match.fundraiserGoal))*400}}" fill="red"/>
+					</svg>
+
 				</div>
 			</div>
 			<div class="matchBox">
@@ -34,6 +38,7 @@
 		</div>
 		<button id="matchButton" ng-click="toDonate(match)">Donate Now</button>
 	</div>
+
 </div>
 
 </div>
