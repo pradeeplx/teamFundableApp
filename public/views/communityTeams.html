@@ -1,25 +1,28 @@
+<div class="postedProjects">
+	<div class="projectContainer" class="teams" ng-repeat="team in teamData">
+		<div class="projName">
 
-<div class="teams" ng-repeat="team in teamData">
-	<div class="team">
-
-      	<input ng-show="editTeamButton" ng-model="team.teamName" placeholder="{{team.teamName}}">
-		<h1 ng-show="!editTeamButton">{{team.teamName}}<h1>
-		<input ng-show="editTeamButton" ng-model="team.logo" placeholder="{{team.logo}}">
-		<img ng-show="!editTeamButton" src={{team.logo}}>
-		<input ng-show="editTeamButton" ng-model="team.clubAge" placeholder="{{team.clubAge}}">
-		<h5 ng-show="!editTeamButton">{{team.clubAge}}</h5>
-		<input ng-show="editTeamButton" ng-model="team.mainDescription" placeholder="{{team.mainDescription}}">
-		<h5 ng-show="!editTeamButton">{{team.mainDescription}}</h5>
-		<input ng-show="editTeamButton" ng-model="team.website" placeholder="{{team.website}}">
-		<h5 ng-show="!editTeamButton">{{team.website}}</h5>
-		<input ng-show="editTeamButton" ng-model="team.createdBy" placeholder="{{team.createdBy}}">
-		<h5 ng-show="!editTeamButton">{{team.createdBy}}</h5>
-
-
-		<button ng-show="team.createdBy == currentUser._id" ng-click="destroyTeamData(team)">Destroy</button>
-		<div ng-show="team.createdBy == currentUser._id">
-			<button ng-hide="editTeamButton" ng-click="editTeamButton = true">EDIT TEAM</button>
-	       	<button ng-show="editTeamButton" ng-click="updateTeamData(team); editTeamButton = false"> Save Changes</button>
-	  </div>
-	</div>
+	    <!-- <input ng-show="editTeamButton" ng-model="team.teamName" placeholder="{{team.teamName}}"> -->
+			<h4 ng-show="!editTeamButton">{{team.teamName}}<h4>
+			</div>
+			<!-- <input ng-show="editTeamButton" ng-model="team.logo" placeholder="{{team.logo}}"> -->
+			<div class="projPic">
+				<img ng-show="!editTeamButton" src={{team.logo}}>
+			</div>
+			<div class="projInfo">
+			<input id="editMode" ng-show="editTeamButton" ng-model="team.clubAge" placeholder="{{team.clubAge}}">
+			<p ng-show="!editTeamButton">Team Age: {{team.clubAge}}</p>
+			<input id="editMode" ng-show="editTeamButton" ng-model="team.mainDescription" placeholder="{{team.mainDescription}}">
+			<p ng-show="!editTeamButton">{{team.mainDescription}}</p>
+			<input id="editMode" ng-show="editTeamButton" ng-model="team.website" placeholder="{{team.website}}">
+			<p ng-show="!editTeamButton">Team Website: {{team.website}}</p>
+			<!-- <input ng-show="editTeamButton" ng-model="team.createdBy" placeholder="{{team.createdBy}}">
+			<h5 ng-show="!editTeamButton">{{team.createdBy}}</h5> -->
 </div>
+			<button ng-show="team.createdBy == currentUser._id" ng-click="destroyTeamData(team)">Destroy</button>
+			<div ng-show="team.createdBy == currentUser._id">
+				<button ng-hide="editTeamButton" ng-click="editTeamButton = true">EDIT TEAM</button>
+		       	<button ng-show="editTeamButton" ng-click="updateTeamData(team); editTeamButton = false"> Save Changes</button>
+		  </div>
+		</div>
+	</div>
