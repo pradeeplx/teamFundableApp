@@ -254,7 +254,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       .then(function(response){
       $scope.projectData = response;
       for (var i = 0; i < $scope.projectData.length; i++) {
-          $scope.projectData[i].dropDate = moment($scope.projectData[i].dropDate).format("MMM. DD, YYYY");
+        $scope.projectData[i].dropDate = moment($scope.projectData[i].dropDate).format("MMM. DD, YYYY");
       }
     })
   };
