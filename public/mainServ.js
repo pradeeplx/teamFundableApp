@@ -250,5 +250,44 @@ this.updateTeamData = function(team){
     return response.data;
   })
 }
+//donations
+this.getDonationData = function (){
+  return $http({
+    method: "GET",
+    url: "/donations"
+  }).then(function(response){
+    return response.data;
+  })
+}
+
+this.postDonationData = function(donation){
+  return $http({
+    method: "POST",
+    url: "/donations",
+    data: donation
+  }).then(function(response){
+      return response.data;
+  })
+}
+
+this.destroyDonationData = function(donation){
+  return $http({
+    method: "DELETE",
+    url: "/donations/" + donation._id
+  }).then(function(response){
+    return response.data;
+  })
+}
+
+this.updateDonationData = function(donation){
+  return $http({
+    method: "PUT",
+    url: "/donations/" + donation._id,
+    data: donation
+  }).then(function(response){
+    console.log(response);
+    return response.data;
+  })
+}
 
 });

@@ -7,11 +7,12 @@ var passport = require("passport");
 
 
 
-var userCtrl = require("./controllers/userCtrl.js")
-var fundraisersCtrl = require("./controllers/fundraisersCtrl.js")
-var matchesCtrl = require("./controllers/matchesCtrl.js")
-var projectsCtrl = require("./controllers/projectsCtrl.js")
-var teamsCtrl = require("./controllers/teamsCtrl.js")
+var userCtrl = require("./controllers/userCtrl.js");
+var fundraisersCtrl = require("./controllers/fundraisersCtrl.js");
+var matchesCtrl = require("./controllers/matchesCtrl.js");
+var projectsCtrl = require("./controllers/projectsCtrl.js");
+var teamsCtrl = require("./controllers/teamsCtrl.js");
+var donationsCtrl = require("./controllers/donationsCtrl.js");
 
 
 
@@ -55,6 +56,11 @@ app.get("/teams", teamsCtrl.read);
 app.post("/teams", teamsCtrl.create);
 app.put("/teams/:id", teamsCtrl.change);
 app.delete("/teams/:id", teamsCtrl.destroy);
+
+app.get("/donations", donationsCtrl.read);
+app.post("/donations", donationsCtrl.create);
+app.put("/donations/:id", donationsCtrl.change);
+app.delete("/donations/:id", donationsCtrl.destroy);
 
 
 mongoose.connect("mongodb://localhost: 27017/teamfundable");
