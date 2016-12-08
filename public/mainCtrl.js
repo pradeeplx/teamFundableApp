@@ -282,7 +282,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     team.createdBy = $scope.currentUser;
     mainServ.postTeamData(team)
     .then(function(response){
-      $state.go('communityTeams');
+     $state.go('communityTeams');
 
     $scope.getTeamData();
     })
