@@ -19,9 +19,7 @@
 					<input id="editMode" type="date" ng-show="editProjectButton" ng-model="project.dropDate" placeholder="{{project.dropDate}}">
 					<p ng-show="!editProjectButton">Completion Date: {{project.dropDate}}</p>
 			</div>
-			<div class="projMatchContainer">
 				<button ng-show="currentUser.hasFundraisers" ng-click="buttonMatch(project)">Match Your Team</button>
-			</div>
 					<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Destroy Project</button>
 
 	  				<div ng-show="project.createdBy == currentUser._id">

@@ -1,28 +1,26 @@
-communityFundraisers
-
 <!-- <div class="fundraiser" ng-repeat="fundraiser in fundraiserData | filter:filterFundraiserIsMatched | filter:filterFundraiserIsActive"> -->
-<div class="postedFundraisers">
-		<div class="fundraiserContainer" ng-repeat="fundraiser in fundraiserData">
+<div class="postedProjects">
+		<div class="projectContainer" ng-repeat="fundraiser in fundraiserData">
 
-			<div class="fundraiserName">
-				<input ng-show="editFundraiserButton" ng-model="fundraiser.name" placeholder="{{fundraiser.name}}">
+			<div class="projName">
+				<!-- <input ng-show="editFundraiserButton" ng-model="fundraiser.name" placeholder="{{fundraiser.name}}"> -->
 				<h4 ng-show="!editFundraiserButton">{{fundraiser.name}}</h4>
 			</div>
-			<div class="fundraiserPic">
-				<input ng-show="editFundraiserButton" ng-model="fundraiser.image" placeholder="{{fundraiser.image}}">
+			<div class="projPic">
+				<!-- <input ng-show="editFundraiserButton" ng-model="fundraiser.image" placeholder="{{fundraiser.image}}"> -->
 				<img ng-show="!editFundraiserButton" src={{fundraiser.image}}>
 			</div>
-			<div class="fundraiserInfo">
-				<input ng-show="editFundraiserButton" ng-model="fundraiser.mainDescription" placeholder="{{fundraiser.mainDescription}}">
+			<div class="projInfo">
+				<input id="editMode" ng-show="editFundraiserButton" ng-model="fundraiser.mainDescription" placeholder="{{fundraiser.mainDescription}}">
 				<p ng-show="!editFundraiserButton">{{fundraiser.mainDescription}}</p>
-				<input ng-show="editFundraiserButton" ng-model="fundraiser.goal" placeholder="{{fundraiser.goal}}">
-				<p ng-show="!editFundraiserButton">{{fundraiser.goal}}</p>
+				<input id="editMode" ng-show="editFundraiserButton" ng-model="fundraiser.goal" placeholder="{{fundraiser.goal}}">
+				<p ng-show="!editFundraiserButton">Fundraiser Goal: {{fundraiser.goal}}</p>
 			</div>
 
 					<button ng-show="fundraiser.createdBy == currentUser._id" ng-click="destroyFundraiserData(fundraiser)">Destroy Fundraiser</button>
 
 	  				<div ng-show="fundraiser.createdBy == currentUser._id">
-						<button ng-hide="editFundraiserButton" ng-click="editFundraiserButton = true">EDIT Fundraiser</button>
+						<button ng-hide="editFundraiserButton" ng-click="editFundraiserButton = true">Edit Fundraiser</button>
 			       		<button ng-show="editFundraiserButton" ng-click="updateFundraiserData(fundraiser); editFundraiserButton = false"> Save Changes</button>
 			       	</div>
 		</div>
