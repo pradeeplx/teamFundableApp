@@ -15,11 +15,11 @@
         <a ui-sref="login"><button class="createButton">Create Account</button></a>
         <a><button class="logOutButton" ng-click="logout()">Log Out</button></a>
 
-        <form ng-show="toggleLogin" ng-submit="postLoginUser(user)">
+        <form class="loginForm" ng-show="toggleLogin" ng-submit="postLoginUser(user)">
           <div>
             <input type="email" class="email" ng-model="user.email" placeholder="Email">
             <input type="password" class="password" ng-model="user.password" placeholder="Password">
-            <input ng-click="toggleLogin = false" type="submit">
+            <input id="loginFormSubmit" ng-click="toggleLogin = false" type="submit">
           </div>
         </form>
 
@@ -54,10 +54,7 @@
       </div>
     </header>
 
-    <div class="uiView">
       <ui-view></ui-view>
-    </div>
-
 
 
 
