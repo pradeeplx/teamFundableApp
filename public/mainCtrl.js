@@ -17,8 +17,13 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
   };
 
 //what happens when donate now is pressed
-  $scope.buttonDonateNow = function(){
-    console.log("made it here");
+  $scope.buttonDonateNow = function(donation){
+    $scope.postDonationData(donation);
+
+
+
+    $state.go('donateLoveThanks');
+    
 
   }
 

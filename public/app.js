@@ -45,6 +45,10 @@ $stateProvider.state("home", {
   url:"/donateLove",
   templateUrl: '/views/donateLove.html'
 
+}).state("donateLoveThanks", {
+  url:"/donateLoveThanks",
+  templateUrl: '/views/donateLoveThanks.html'
+
 })
     $urlRouterProvider.otherwise("/")
 
