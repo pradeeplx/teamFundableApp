@@ -22,7 +22,7 @@
 				<p ng-show="!editProjectButton">{{project.dropDate}}</p>
 			</div>
 			<div class="projMatchContainer">
-				<button id="projMatchButton" ng-show="currentUser.hasFundraiser">Match Your Team</button>
+				<button id="projMatchButton" ng-show="currentUser.hasFundraisers" ng-click="buttonMatch(project)">Match Your Team</button>
 			</div>
 					<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Destroy Project</button>
 
