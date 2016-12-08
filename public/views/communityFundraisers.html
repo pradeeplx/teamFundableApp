@@ -1,8 +1,14 @@
+<div class="outsideDiv">
+
+
+<div class="top-spacer">
+
+</div>
 <!-- <div class="fundraiser" ng-repeat="fundraiser in fundraiserData | filter:filterFundraiserIsMatched | filter:filterFundraiserIsActive"> -->
 <div class="postedProjects">
 		<div class="projectContainer" ng-repeat="fundraiser in fundraiserData | filter:filterFundraiserIsMatched">
 
-			<div class="projName">
+			<div class="fundName">
 				<!-- <input ng-show="editFundraiserButton" ng-model="fundraiser.name" placeholder="{{fundraiser.name}}"> -->
 				<h4 ng-show="!editFundraiserButton">{{fundraiser.name}}</h4>
 			</div>
@@ -24,4 +30,5 @@
 			       		<button ng-show="editFundraiserButton" ng-click="updateFundraiserData(fundraiser); editFundraiserButton = false"> Save Changes</button>
 			       	</div>
 		</div>
+</div>
 </div>

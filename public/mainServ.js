@@ -19,7 +19,7 @@ this.postNewUser = function(user) {
    }
 
    this.logout = function() {
-  
+
        return $http({
            method: "POST",
            url: "/logout/"
@@ -215,7 +215,9 @@ this.getTeamData = function (){
     method: "GET",
     url: "/teams"
   }).then(function(response){
+    console.log(response);  //*************************//
     return response.data;
+
   })
 }
 

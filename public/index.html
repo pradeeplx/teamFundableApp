@@ -6,6 +6,7 @@
     <link href="./../pics/iconTransparent.png" rel="shortcut icon" type="image/x-icon">
       <link rel="stylesheet" href="/styles/styles.css" >
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+      <script src="https://use.fontawesome.com/b4ccb25300.js"></script>
 
   </head>
   <body ng-controller="mainCtrl">
@@ -13,7 +14,9 @@
     <header>
       <div class="topHeader">
         <img class="logo" src="./../pics/teamFundableLogo2.png"/>
-        <button class="loginButton" ng-click="toggleLogin = !toggleLogin"><a>Log In</a></button>
+        <div ng-show="!currentUser">
+          <button class="loginButton" ng-click="toggleLogin = !toggleLogin"><a>Log In</a></button>
+        </div>
         <a ui-sref="login"><button class="createButton">Create Account</button></a>
         <a><button class="logOutButton" ng-click="logout()">Log Out</button></a>
 
@@ -32,8 +35,18 @@
           	</div>
           </div>
           <div ng-show="currentUser">
+          	<div ng-show="currentUser.hasProjects">
+          		<button class="createProjectButtonDead">Create Project</button>
+          	</div>
+          </div>
+          <div ng-show="currentUser">
           	<div ng-show="!currentUser.hasTeams">
           		<a ui-sref="createTeam"><button class="createTeamButton">Create Team</button></a>
+          	</div>
+          </div>
+          <div ng-show="currentUser">
+          	<div ng-show="currentUser.hasTeams">
+          		<button class="createTeamButtonDead">Create Team</button>
           	</div>
           </div>
           <div ng-show="currentUser">
@@ -41,6 +54,7 @@
             	<a ui-sref="createFundraiser"><button class="createFundraiserButton">Create A Fundraiser</button></a>
             </div>
           </div>
+
         </div>
 
         <div class="navHeader">
@@ -56,18 +70,26 @@
       </div>
     </header>
 
-      <ui-view></ui-view>
+      <ui-view class="view"></ui-view>
 
-        <div id="thing"></div>
-        
+      <footer>
+        <br>
+        <p> Thank you for helping your community with teamFundable!</p>
+         Follow us at :
+         <a><i class="fa fa-facebook" aria-hidden="true"></i></a>
+         <a><i class="fa fa-twitter" aria-hidden="true"></i></a>
+         <a><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+         <a><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+       </footer>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
         <script src="app.js"></script>
         <script src="mainCtrl.js"></script>
         <script src="mainServ.js"></script>
-        
+
 <!--         <script src="./../controllers/modalCtrl.js"></script> -->
 
-  
+
   </body>
 </html>

@@ -1,6 +1,13 @@
+<div class="outsideDiv">
+
+
+<div class="top-spacer">
+
+</div>
+
 <div class="postedProjects">
 	<div class="projectContainer" class="teams" ng-repeat="team in teamData">
-		<div class="projName">
+		<div class="teamName">
 
 	    <!-- <input ng-show="editTeamButton" ng-model="team.teamName" placeholder="{{team.teamName}}"> -->
 			<h4 ng-show="!editTeamButton">{{team.teamName}}<h4>
@@ -18,7 +25,7 @@
 			<p ng-show="!editTeamButton">Team Website: {{team.website}}</p>
 			<!-- <input ng-show="editTeamButton" ng-model="team.createdBy" placeholder="{{team.createdBy}}">
 			<h5 ng-show="!editTeamButton">{{team.createdBy}}</h5> -->
-</div>
+		</div>
 			<button ng-show="team.createdBy == currentUser._id" ng-click="destroyTeamData(team)">Destroy</button>
 			<div ng-show="team.createdBy == currentUser._id">
 				<button ng-hide="editTeamButton" ng-click="editTeamButton = true">EDIT TEAM</button>
@@ -26,3 +33,4 @@
 		  </div>
 		</div>
 	</div>
+</div>
