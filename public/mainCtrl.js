@@ -64,6 +64,26 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
       "teamLogo": team.logo
     };
     $scope.postMatchData(match);
+
+    //put request for project and fundraser to change ismatched
+
+    var matchedProject = {};
+    var matchedFundraiser = {};
+
+    matchedProject = {
+      "_id": project._id,
+      "isMatched": true
+    };
+      matchedFundraiser = {
+      "_id": fun._id,
+      "isMatched": true
+    };
+
+
+
+    $scope.updateFundraiserData(matchedFundraiser);
+    $scope.updateProjectData(matchedProject);
+
   };
 
 
