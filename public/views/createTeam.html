@@ -1,10 +1,16 @@
-createTeam.html
-
-<form ng-submit="postTeamData(team)">
-		<input type="text" ng-model="team.teamName" placeholder="Team Name">
-		<input type="text" ng-model="team.mainDescription" placeholder="Team Description">
-		<input type="text" ng-model="team.clubAge" placeholder="Club Age">
-		<input type="text" ng-model="team.logo" placeholder="Team Logo">
-		<input type="text" ng-model="team.website" placeholder="Website Address">
-	  <input type="submit">
-</form>
+<div class="postProjContainer">
+	<form class="projectsInput" ng-submit="postTeamData(team)">
+		<h2><u>Sign Up Your Team Below:</u></h2>
+		<p>Team Name:</p>
+			<input type="text" ng-model="team.teamName">
+			<p>Tell Us About Yourself:</p>
+			<input type="text" ng-model="team.mainDescription">
+			<p>How Long Have You Been A Team:</p>
+			<input type="text" ng-model="team.clubAge">
+			<p>Team Logo:</p>
+			<input type="text" ng-model="team.logo">
+			<p>Team Website Address:</p>
+			<input type="text" ng-model="team.website">
+		  <input id="postProjInput" type="submit">
+	</form>
+</div>

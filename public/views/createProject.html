@@ -1,11 +1,19 @@
-createProject.html
 
-<form class="projectsInput" ng-submit="postProjectData(project)">
-	<input type="text" ng-model="project.name" placeholder="Project Name">
-	<input type="text" ng-model="project.mainDescription" placeholder="Project Description">
-	<input type="text" ng-model="project.estimatedLabor" placeholder="Hours to Complete">
-	<input type="text" ng-model="project.estimatedCost" placeholder="Dollars to Complete">
-	<input type="date" ng-model="project.dropDate" placeholder="Funding Complete By">
-	<input type="text" ng-model="project.image" placeholder="Project Image">
-	<input type="submit">
-</form>
+<div class="postProjContainer">
+	<form class="projectsInput" ng-submit="postProjectData(project)">
+		<h2><u>Create A Project Below:</u></h2>
+		<p>Project Name:</p>
+			<input type="text" ng-model="project.name">
+			<p>Project Description:</p>
+			<input type="text" ng-model="project.mainDescription">
+			<p>Project Picture:</p>
+			<input type="text" ng-model="project.image">
+			<p>Estimated Hours To Complete:</p>
+		<input type="text" ng-model="project.estimatedLabor">
+		<p>Estimated Cost To Complete:</p>
+		<input type="text" ng-model="project.estimatedCost">
+		<p>Completion Date: </p>
+		<input type="date" ng-model="project.dropDate">
+		<input id="postProjInput" type="submit">
+	</form>
+</div>
