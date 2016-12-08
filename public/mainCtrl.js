@@ -181,6 +181,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     mainServ.postFundraiserData(fundraiser)
     .then(function(response){
     $scope.getFundraiserData();
+    $state.go('communityFundraisers');
     })
   };
   $scope.getFundraiserData = function(){
@@ -245,6 +246,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     mainServ.postProjectData(project)
     .then(function(response){
     $scope.getProjectData();
+    $state.go('communityProjects');
     })
   };
   $scope.getProjectData = function(){
@@ -280,6 +282,7 @@ angular.module("teamFundableApp").controller("mainCtrl", function($scope, mainSe
     team.createdBy = $scope.currentUser;
     mainServ.postTeamData(team)
     .then(function(response){
+      $state.go('communityTeams');
 
     $scope.getTeamData();
     })

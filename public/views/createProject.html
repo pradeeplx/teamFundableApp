@@ -1,6 +1,6 @@
 
 <div class="postProjContainer">
-	<form class="projectsInput" ng-submit="postProjectData(project)">
+	<form class="projectsInput">
 		<h2><u>Create A Project Below:</u></h2>
 		<p>Project Name:</p>
 			<input type="text" ng-model="project.name">
@@ -14,6 +14,6 @@
 		<input type="text" ng-model="project.estimatedCost">
 		<p>Completion Date: </p>
 		<input type="date" ng-model="project.dropDate">
-		<input id="postProjInput" type="submit">
+		<button id="postProjInput" ng-click="postProjectData(project)">Submit</button>
 	</form>
 </div>

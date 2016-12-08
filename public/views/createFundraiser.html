@@ -1,5 +1,5 @@
 <div class="postProjContainer">
-		<form class="projectsInput" ng-submit="postFundraiserData(fundraiser)">
+		<form class="projectsInput">
 			<h2><u>Post a Fundraiser Below:</u></h2>
 			<p>Fundraiser Name:</p>
 			<input type="text" ng-model="fundraiser.name">
@@ -9,6 +9,6 @@
 			<input type="text" ng-model="fundraiser.goal">
 			<p>Fundraiser Image:</p>
 			<input type="text" ng-model="fundraiser.image">
-		 	<input id="postProjInput" type="submit">
+		 	<button id="postProjInput" ng-click="postFundraiserData(fundraiser)">Submit</button>
 		</form>
 </div>
