@@ -1,6 +1,12 @@
+<div class="outsideDiv">
 
+
+<div class="top-spacer">
+
+</div>
 <!-- <div class="projects" ng-repeat="project in projectData | filter:filterProjectIsMatched | filter:filterProjectIsActive"> -->
 <div class="postedProjects">
+
 		<div class="projectContainer" ng-repeat="project in projectData | filter:filterProjectIsMatched ">
 
 			<div class="projName">
@@ -27,4 +33,5 @@
 			       		<button ng-show="editProjectButton" ng-click="updateProjectData(project); editProjectButton = false"> Save Changes</button>
 			       	</div>
 	</div>
+</div>
 </div>

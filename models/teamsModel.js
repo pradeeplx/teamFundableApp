@@ -6,7 +6,7 @@ var teamsSchema = new mongoose.Schema({
  mainDescription: {type: String},
  clubAge: {type: String},
  logo: {type: String},
- website: {types: String},
+ website: {type: String},
  createdBy: {type: String}
 
 });
