@@ -1,5 +1,5 @@
 <div class="postProjContainer">
-	<form class="projectsInput" ng-submit="postTeamData(team)">
+	<form class="projectsInput">
 		<h2><u>Sign Up Your Team Below:</u></h2>
 		<p>Team Name:</p>
 			<input type="text" ng-model="team.teamName">
@@ -11,6 +11,7 @@
 			<input type="text" ng-model="team.logo">
 			<p>Team Website Address:</p>
 			<input type="text" ng-model="team.website">
-		  <input id="postProjInput" type="submit">
+			<button id="postProjInput" ng-click="postTeamData(team)">Submit</button>
+	
 	</form>
 </div>
