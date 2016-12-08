@@ -4,33 +4,29 @@
 		<div class="projectContainer" ng-repeat="project in projectData | filter:filterProjectIsMatched ">
 
 			<div class="projName">
-				<input ng-show="editProjectButton" ng-model="project.name" placeholder="{{project.name}}">
-				<h4 ng-show="!editProjectButton">{{project.name}}</h4>
+					<h4 ng-show="!editProjectButton">{{project.name}}</h4>
 			</div>
 			<div class="projPic">
-				<input ng-show="editProjectButton" ng-model="project.image" placeholder="{{project.image}}">
-				<img ng-show="!editProjectButton" src={{project.image}}>
+					<img ng-show="!editProjectButton" src={{project.image}}>
 			</div>
 			<div class="projInfo">
-				<input ng-show="editProjectButton" ng-model="project.mainDescription" placeholder="{{project.mainDescription}}">
-				<p ng-show="!editProjectButton">{{project.mainDescription}}</p>
-				<input ng-show="editProjectButton" ng-model="project.estimatedLabor" placeholder="{{project.estimatedLabor}}">
-				<p ng-show="!editProjectButton">{{project.estimatedLabor}}</p>
-				<input ng-show="editProjectButton" ng-model="project.estimatedCost" placeholder="{{project.estimatedCost}}">
-				<p ng-show="!editProjectButton"> {{project.estimatedCost}}</p>
-				<input ng-show="editProjectButton" ng-model="project.dropDate" placeholder="{{project.dropDate}}">
-				<p ng-show="!editProjectButton">{{project.dropDate}}</p>
+					<input id="editMode" ng-show="editProjectButton" ng-model="project.mainDescription" placeholder="{{project.mainDescription}}">
+					<p ng-show="!editProjectButton">{{project.mainDescription}}</p>
+					<input id="editMode" ng-show="editProjectButton" ng-model="project.estimatedLabor" placeholder="{{project.estimatedLabor}}">
+					<p ng-show="!editProjectButton">Estimated Labor: {{project.estimatedLabor}}</p>
+					<input id="editMode" ng-show="editProjectButton" ng-model="project.estimatedCost" placeholder="{{project.estimatedCost}}">
+					<p ng-show="!editProjectButton">Estimated Cost: {{project.estimatedCost}}</p>
+					<input id="editMode" type="date" ng-show="editProjectButton" ng-model="project.dropDate" placeholder="{{project.dropDate}}">
+					<p ng-show="!editProjectButton">Completion Date: {{project.dropDate}}</p>
 			</div>
 			<div class="projMatchContainer">
-				<button id="projMatchButton" ng-show="currentUser.hasFundraisers" ng-click="buttonMatch(project)">Match Your Team</button>
+				<button ng-show="currentUser.hasFundraisers" ng-click="buttonMatch(project)">Match Your Team</button>
 			</div>
 					<button ng-show="project.createdBy == currentUser._id" ng-click="destroyProjectData(project)">Destroy Project</button>
 
 	  				<div ng-show="project.createdBy == currentUser._id">
-						<button ng-hide="editProjectButton" ng-click="editProjectButton = true">EDIT Project</button>
+						<button ng-hide="editProjectButton" ng-click="editProjectButton = true">Edit Project</button>
 			       		<button ng-show="editProjectButton" ng-click="updateProjectData(project); editProjectButton = false"> Save Changes</button>
 			       	</div>
-
-
 	</div>
 </div>
