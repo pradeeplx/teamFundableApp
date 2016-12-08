@@ -1,7 +1,8 @@
 matches
 
-<div class="mathces" ng-repeat="match in matchData">
-	<div class="match">	
+<div class="matches" ng-repeat="match in matchData">
+	<div class="match">
+		{{match}}
 		<h1>{{match.status}}</h1>
 		<h1>{{match.projectName}}</h1>
 		<h1>{{match.projectMainDescription}}</h1>
@@ -11,7 +12,7 @@ matches
 		<h1>{{match.fundraiserMainDescription}}</h1>
 		<h1>{{match.fundraiserGoal}}</h1>
 		<img src={{match.fundraiserImage}}/>
-		<h1>{{match.fundraiserImage}}</h1>
+		<!-- <h1>{{match.fundraiserImage}}</h1> -->
 		<h1>{{match.teamName}}</h1>
 		<h1>{{match.teamMainDescription}}</h1>
 		<h1>{{match.teamClubAge}}</h1>
@@ -19,8 +20,5 @@ matches
 
 		<button ng-click="toDonate(match)">DONATE NOW</button>
 	 </div>
-	
+
 </div>
-
-
-	
